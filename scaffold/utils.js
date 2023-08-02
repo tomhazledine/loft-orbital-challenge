@@ -19,7 +19,7 @@ export const parseConfig = (config, args) => {
         verbose: args.verbose || args.v || false,
         styles: path.resolve(".", config.styles),
         scripts: [...new Set(scriptFolders)],
-        port: 1337,
+        port: process.env.PORT || 1337,
         out: path.resolve(".", config.out),
         public: path.resolve(".", config.public)
     };

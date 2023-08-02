@@ -18,7 +18,9 @@ export const server = (buildPath, port) => {
 export const exit = () => {
     console.log(`Press "q" to exit`);
     readline.emitKeypressEvents(process.stdin);
-    process.stdin.setRawMode(true);
+    if (process.stdin.isTTY) {
+        process.stdin.setRawMode(true);
+    }
 
     process.stdin.on("keypress", (str, key) => {
         if (key.name === "q") {
