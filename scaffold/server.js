@@ -3,13 +3,23 @@ import { Server } from "node-static";
 import readline from "readline";
 
 export const server = (buildPath, port) => {
-    const file = new Server(buildPath);
+    const fileServer = new Server(buildPath);
 
-    http.createServer(function (request, response) {
+    http.createServer((request, response) => {
         request
-            .addListener("end", function () {
-                // Serve files!
-                file.serve(request, response);
+            .addListener("end", () => {
+                fileServer.serve(request, response, e => {
+                    if (e && e.status === 404) {
+                        // If the file wasn't found
+                        fileServer.serveFile(
+                            "/index.html",
+                            200,
+                            {},
+                            request,
+                            response
+                        );
+                    }
+                });
             })
             .resume();
     }).listen(port);
