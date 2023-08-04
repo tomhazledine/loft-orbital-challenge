@@ -1,5 +1,5 @@
 export const config = {
-    appName: "app-scaffold",
+    appName: "loft-orbital-challenge",
     entryPoints: ["src/js/app.js"],
     styles: "src/scss",
     port: 1337,
