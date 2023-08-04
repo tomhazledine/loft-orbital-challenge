@@ -20,5 +20,12 @@
     "path": "^0.12.7",
     "postcss": "^8.4.24",
     "sass": "^1.63.6"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.7.17",
+    "graphql": "^16.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.2"
   }
 }
