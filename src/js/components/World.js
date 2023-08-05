@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { geoPath, geoGraticule } from "d3-geo";
 import { geoPolyhedralWaterman } from "d3-geo-projection";
+import { useNavigate } from "react-router-dom";
 
 import { shapes } from "../data/shapes";
 
 const World = ({ continents }) => {
+    const navigate = useNavigate();
     const [active, setActive] = useState({ continent: false, country: false });
     const wrapperRef = useRef(null);
 
@@ -20,6 +22,10 @@ const World = ({ continents }) => {
     const handleHover = (continent, country) => {
         console.log({ continent, country });
         setActive({ continent: continent.name, country: country.name });
+    };
+
+    const handleSelection = continent => {
+        navigate(`/continent/${continent.code.toLowerCase()}`);
     };
 
     const handleFocus = continent => {
@@ -63,6 +69,7 @@ const World = ({ continents }) => {
             }`}
             tabIndex="0"
             onFocus={() => handleFocus(continent)}
+            onClick={() => handleSelection(continent)}
         >
             {continent.countries.map(country => {
                 const countryFeature = shapes[country.name];
@@ -74,7 +81,8 @@ const World = ({ continents }) => {
                             className="map__country-shape"
                             d={countryData}
                             clipPath="url(#sphere)"
-                            onMouseOver={e => handleHover(continent, country)}
+                            onMouseOver={() => handleHover(continent, country)}
+                            onClick={() => handleSelection(continent)}
                         />
                     </g>
                 );
@@ -93,7 +101,7 @@ const World = ({ continents }) => {
             <svg
                 ref={wrapperRef}
                 className="map"
-                viewBox={`45 0 870 500`}
+                viewBox={`35 0 890 500`}
                 preserveAspectRatio="none"
             >
                 <clipPath id="sphere">

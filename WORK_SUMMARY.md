@@ -29,3 +29,6 @@ Time: ~1 week 😆
     -   For each country within each continent, render an SVG map showing the country (with graticules and using a basic "EqualEarth" projection) ![Simple per-country render](research/first-countries-render.png).
     -   Render all countries into a single map view SVG, with `<g>` groups for each continent. ![first render of all countries](research/first-full-world-render.png).
     -   Change the map projection (experimented with several projections including "Interrupted Mollweide Hemispheres" and "Polyhedral Butterfly", but settled on an approximation of the Waterman Butterfly projection because it's visually unusual and I want to show that I'm a [map nerd](https://xkcd.com/977/)). Add highlighting on hover to indicate selected continent and country.
+    -   Add keyboard support for world map interaction.
+    -   Add click interaction for map to navigate to a continent page.
+    -   For a continent page, load the data for that continent from the API.
