@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { geoPath, geoGraticule } from "d3-geo";
 import { geoPolyhedralWaterman } from "d3-geo-projection";
 
@@ -22,9 +22,36 @@ const World = ({ continents }) => {
         setActive({ continent: continent.name, country: country.name });
     };
 
+    const handleFocus = continent => {
+        setActive({ continent: continent.name, country: false });
+    };
+
     const handleReset = () => {
         setActive({ continent: false, country: false });
     };
+
+    const handleEsc = e => {
+        if (wrapperRef.current && wrapperRef.current.contains(e.target)) {
+            if (e.keyCode === 27) {
+                handleReset();
+            }
+        }
+    };
+
+    const handleClickOutside = e => {
+        if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
+            handleReset();
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener("click", handleClickOutside);
+        document.addEventListener("keydown", handleEsc);
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+            document.removeEventListener("keydown", handleEsc);
+        };
+    }, []);
 
     const continentMarkup = continents.map(continent => (
         <g
@@ -34,6 +61,8 @@ const World = ({ continents }) => {
                     ? "map__continent--active"
                     : ""
             }`}
+            tabIndex="0"
+            onFocus={() => handleFocus(continent)}
         >
             {continent.countries.map(country => {
                 const countryFeature = shapes[country.name];
