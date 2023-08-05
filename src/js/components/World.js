@@ -3,7 +3,7 @@ import { geoEqualEarth, geoPath, geoGraticule } from "d3-geo";
 
 import { shapes } from "../data/shapes";
 
-const TestMapRender = ({ country }) => {
+const World = ({ continents }) => {
     const map = {
         layout: {
             width: 1000,
@@ -17,8 +17,6 @@ const TestMapRender = ({ country }) => {
         }
     };
 
-    const countryFeature = shapes[country.name];
-
     const projection = geoEqualEarth();
     const geoGenerator = geoPath().projection(projection);
 
@@ -26,22 +24,32 @@ const TestMapRender = ({ country }) => {
     const graticules = graticuleGenerator();
     const graticuleData = geoGenerator(graticules);
 
-    const pathData = geoGenerator(countryFeature);
-    console.log({ pathData });
-    console.log({ graticuleData });
+    const continentMarkup = continents.map(continent => (
+        <g key={`continent_${continent.code}`}>
+            {continent.countries.map(country => {
+                console.log({ country });
+                const countryFeature = shapes[country.name];
+                if (!countryFeature) return null;
+                const countryData = geoGenerator(countryFeature);
+                return (
+                    <g key={`country_${country.code}`}>
+                        <path className="country-shape" d={countryData} />
+                    </g>
+                );
+            })}
+        </g>
+    ));
 
     return (
         <svg
             className="country-map"
-            viewBox={`0 0 ${map.layout.width} ${
-                map.layout.height + map.layout.margin.bottom
-            }`}
+            viewBox={`0 0 ${map.layout.width} ${map.layout.height}`}
             preserveAspectRatio="none"
         >
             <path className="graticules" d={graticuleData} />
-            <path className="country-shape" d={pathData} />
+            {continentMarkup}
         </svg>
     );
 };
 
-export default TestMapRender;
+export default World;

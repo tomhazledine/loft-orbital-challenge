@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
 
-import TestMapRender from "../components/TestMapRender";
+import World from "../components/World";
 
 const LIST_CONTINENTS = gql`
     {
@@ -25,23 +25,7 @@ const Home = () => {
     return (
         <>
             <h1>Home</h1>
-            <ul>
-                {data.continents.map(continent => (
-                    <li key={continent.code}>
-                        <h3>{continent.name}</h3>
-                        <ul>
-                            {continent.countries.map(country => (
-                                <li key={country.code}>
-                                    <h4>
-                                        {country.name} ({country.code})
-                                    </h4>
-                                    <TestMapRender country={country} />
-                                </li>
-                            ))}
-                        </ul>
-                    </li>
-                ))}
-            </ul>
+            <World continents={data.continents} />
         </>
     );
 };
