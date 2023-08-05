@@ -1,39 +1,52 @@
-import React from "react";
-import { geoEqualEarth, geoPath, geoGraticule } from "d3-geo";
+import React, { useRef, useState } from "react";
+import { geoPath, geoGraticule } from "d3-geo";
+import { geoPolyhedralWaterman } from "d3-geo-projection";
 
 import { shapes } from "../data/shapes";
 
 const World = ({ continents }) => {
-    const map = {
-        layout: {
-            width: 1000,
-            height: 500,
-            margin: {
-                top: 20,
-                right: 20,
-                bottom: 20,
-                left: 20
-            }
-        }
-    };
+    const [active, setActive] = useState({ continent: false, country: false });
+    const wrapperRef = useRef(null);
 
-    const projection = geoEqualEarth();
+    const projection = geoPolyhedralWaterman();
     const geoGenerator = geoPath().projection(projection);
 
     const graticuleGenerator = geoGraticule();
     const graticules = graticuleGenerator();
     const graticuleData = geoGenerator(graticules);
 
+    const sphereData = geoGenerator({ type: "Sphere" });
+
+    const handleHover = (continent, country) => {
+        console.log({ continent, country });
+        setActive({ continent: continent.name, country: country.name });
+    };
+
+    const handleReset = () => {
+        setActive({ continent: false, country: false });
+    };
+
     const continentMarkup = continents.map(continent => (
-        <g key={`continent_${continent.code}`}>
+        <g
+            key={`continent_${continent.code}`}
+            className={`map__continent ${
+                active.continent === continent.name
+                    ? "map__continent--active"
+                    : ""
+            }`}
+        >
             {continent.countries.map(country => {
-                console.log({ country });
                 const countryFeature = shapes[country.name];
                 if (!countryFeature) return null;
                 const countryData = geoGenerator(countryFeature);
                 return (
-                    <g key={`country_${country.code}`}>
-                        <path className="country-shape" d={countryData} />
+                    <g key={`country_${country.code}`} className="map__country">
+                        <path
+                            className="map__country-shape"
+                            d={countryData}
+                            clipPath="url(#sphere)"
+                            onMouseOver={e => handleHover(continent, country)}
+                        />
                     </g>
                 );
             })}
@@ -41,14 +54,35 @@ const World = ({ continents }) => {
     ));
 
     return (
-        <svg
-            className="country-map"
-            viewBox={`0 0 ${map.layout.width} ${map.layout.height}`}
-            preserveAspectRatio="none"
-        >
-            <path className="graticules" d={graticuleData} />
-            {continentMarkup}
-        </svg>
+        <div className="map__wrapper">
+            {active.continent && (
+                <div className="map__legend">
+                    <p>continent: {active.continent}</p>
+                    {active.country && <p>country: {active.country}</p>}
+                </div>
+            )}
+            <svg
+                ref={wrapperRef}
+                className="map"
+                viewBox={`45 0 870 500`}
+                preserveAspectRatio="none"
+            >
+                <clipPath id="sphere">
+                    <path d={sphereData} />
+                </clipPath>
+                <path
+                    className="map__border"
+                    d={sphereData}
+                    onMouseLeave={handleReset}
+                />
+                <path
+                    className="map__graticules"
+                    d={graticuleData}
+                    clipPath="url(#sphere)"
+                />
+                {continentMarkup}
+            </svg>
+        </div>
     );
 };
 
