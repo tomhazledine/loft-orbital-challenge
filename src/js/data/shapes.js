@@ -1,7 +1,7 @@
 export const shapes = {
     Afghanistan: {
-        name: "Afghanistan",
-        id: "AFG",
+        type: "Feature",
+        properties: { name: "Afghanistan" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -77,11 +77,12 @@ export const shapes = {
                     [61.210817, 35.650072]
                 ]
             ]
-        }
+        },
+        id: "AFG"
     },
     Angola: {
-        name: "Angola",
-        id: "AGO",
+        type: "Feature",
+        properties: { name: "Angola" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -169,11 +170,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "AGO"
     },
     Albania: {
-        name: "Albania",
-        id: "ALB",
+        type: "Feature",
+        properties: { name: "Albania" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -202,11 +204,12 @@ export const shapes = {
                     [20.590247, 41.855404]
                 ]
             ]
-        }
+        },
+        id: "ALB"
     },
     "United Arab Emirates": {
-        name: "United Arab Emirates",
-        id: "ARE",
+        type: "Feature",
+        properties: { name: "United Arab Emirates" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -235,11 +238,12 @@ export const shapes = {
                     [51.579519, 24.245497]
                 ]
             ]
-        }
+        },
+        id: "ARE"
     },
     Argentina: {
-        name: "Argentina",
-        id: "ARG",
+        type: "Feature",
+        properties: { name: "Argentina" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -373,11 +377,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "ARG"
     },
     Armenia: {
-        name: "Armenia",
-        id: "ARM",
+        type: "Feature",
+        properties: { name: "Armenia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -404,11 +409,12 @@ export const shapes = {
                     [43.582746, 41.092143]
                 ]
             ]
-        }
+        },
+        id: "ARM"
     },
     Antarctica: {
-        name: "Antarctica",
-        id: "ATA",
+        type: "Feature",
+        properties: { name: "Antarctica" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -1103,11 +1109,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "ATA"
     },
     "French Southern Territories": {
-        name: "French Southern and Antarctic Lands",
-        id: "ATF",
+        type: "Feature",
+        properties: { name: "French Southern and Antarctic Lands" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -1123,11 +1130,12 @@ export const shapes = {
                     [68.935, -48.625]
                 ]
             ]
-        }
+        },
+        id: "ATF"
     },
     Australia: {
-        name: "Australia",
-        id: "AUS",
+        type: "Feature",
+        properties: { name: "Australia" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -1381,11 +1389,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "AUS"
     },
     Austria: {
-        name: "Austria",
-        id: "AUT",
+        type: "Feature",
+        properties: { name: "Austria" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -1429,11 +1438,12 @@ export const shapes = {
                     [16.979667, 48.123497]
                 ]
             ]
-        }
+        },
+        id: "AUT"
     },
     Azerbaijan: {
-        name: "Azerbaijan",
-        id: "AZE",
+        type: "Feature",
+        properties: { name: "Azerbaijan" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -1490,11 +1500,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "AZE"
     },
     Burundi: {
-        name: "Burundi",
-        id: "BDI",
+        type: "Feature",
+        properties: { name: "Burundi" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -1514,11 +1525,12 @@ export const shapes = {
                     [29.339998, -4.499983]
                 ]
             ]
-        }
+        },
+        id: "BDI"
     },
     Belgium: {
-        name: "Belgium",
-        id: "BEL",
+        type: "Feature",
+        properties: { name: "Belgium" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -1540,11 +1552,12 @@ export const shapes = {
                     [3.314971, 51.345781]
                 ]
             ]
-        }
+        },
+        id: "BEL"
     },
     Benin: {
-        name: "Benin",
-        id: "BEN",
+        type: "Feature",
+        properties: { name: "Benin" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -1576,11 +1589,12 @@ export const shapes = {
                     [2.691702, 6.258817]
                 ]
             ]
-        }
+        },
+        id: "BEN"
     },
     "Burkina Faso": {
-        name: "Burkina Faso",
-        id: "BFA",
+        type: "Feature",
+        properties: { name: "Burkina Faso" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -1626,11 +1640,12 @@ export const shapes = {
                     [-2.827496, 9.642461]
                 ]
             ]
-        }
+        },
+        id: "BFA"
     },
     Bangladesh: {
-        name: "Bangladesh",
-        id: "BGD",
+        type: "Feature",
+        properties: { name: "Bangladesh" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -1673,11 +1688,12 @@ export const shapes = {
                     [92.672721, 22.041239]
                 ]
             ]
-        }
+        },
+        id: "BGD"
     },
     Bulgaria: {
-        name: "Bulgaria",
-        id: "BGR",
+        type: "Feature",
+        properties: { name: "Bulgaria" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -1712,11 +1728,12 @@ export const shapes = {
                     [22.65715, 44.234923]
                 ]
             ]
-        }
+        },
+        id: "BGR"
     },
     Bahamas: {
-        name: "The Bahamas",
-        id: "BHS",
+        type: "Feature",
+        properties: { name: "The Bahamas" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -1754,11 +1771,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "BHS"
     },
     "Bosnia and Herzegovina": {
-        name: "Bosnia and Herzegovina",
-        id: "BIH",
+        type: "Feature",
+        properties: { name: "Bosnia and Herzegovina" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -1787,11 +1805,12 @@ export const shapes = {
                     [19.005486, 44.860234]
                 ]
             ]
-        }
+        },
+        id: "BIH"
     },
     Belarus: {
-        name: "Belarus",
-        id: "BLR",
+        type: "Feature",
+        properties: { name: "Belarus" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -1842,11 +1861,12 @@ export const shapes = {
                     [23.484128, 53.912498]
                 ]
             ]
-        }
+        },
+        id: "BLR"
     },
     Belize: {
-        name: "Belize",
-        id: "BLZ",
+        type: "Feature",
+        properties: { name: "Belize" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -1873,11 +1893,12 @@ export const shapes = {
                     [-89.14308, 17.808319]
                 ]
             ]
-        }
+        },
+        id: "BLZ"
     },
     Bolivia: {
-        name: "Bolivia",
-        id: "BOL",
+        type: "Feature",
+        properties: { name: "Bolivia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -1944,11 +1965,12 @@ export const shapes = {
                     [-62.846468, -22.034985]
                 ]
             ]
-        }
+        },
+        id: "BOL"
     },
     Brazil: {
-        name: "Brazil",
-        id: "BRA",
+        type: "Feature",
+        properties: { name: "Brazil" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -2158,11 +2180,12 @@ export const shapes = {
                     [-57.625133, -30.216295]
                 ]
             ]
-        }
+        },
+        id: "BRA"
     },
     Brunei: {
-        name: "Brunei",
-        id: "BRN",
+        type: "Feature",
+        properties: { name: "Brunei" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -2177,11 +2200,12 @@ export const shapes = {
                     [114.204017, 4.525874]
                 ]
             ]
-        }
+        },
+        id: "BRN"
     },
     Bhutan: {
-        name: "Bhutan",
-        id: "BTN",
+        type: "Feature",
+        properties: { name: "Bhutan" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -2201,11 +2225,12 @@ export const shapes = {
                     [91.696657, 27.771742]
                 ]
             ]
-        }
+        },
+        id: "BTN"
     },
     Botswana: {
-        name: "Botswana",
-        id: "BWA",
+        type: "Feature",
+        properties: { name: "Botswana" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -2252,11 +2277,12 @@ export const shapes = {
                     [25.649163, -18.536026]
                 ]
             ]
-        }
+        },
+        id: "BWA"
     },
     "Central African Republic": {
-        name: "Central African Republic",
-        id: "CAF",
+        type: "Feature",
+        properties: { name: "Central African Republic" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -2325,11 +2351,12 @@ export const shapes = {
                     [15.27946, 7.421925]
                 ]
             ]
-        }
+        },
+        id: "CAF"
     },
     Canada: {
-        name: "Canada",
-        id: "CAN",
+        type: "Feature",
+        properties: { name: "Canada" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -3249,11 +3276,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "CAN"
     },
     Switzerland: {
-        name: "Switzerland",
-        id: "CHE",
+        type: "Feature",
+        properties: { name: "Switzerland" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -3284,11 +3312,12 @@ export const shapes = {
                     [9.594226, 47.525058]
                 ]
             ]
-        }
+        },
+        id: "CHE"
     },
     Chile: {
-        name: "Chile",
-        id: "CHL",
+        type: "Feature",
+        properties: { name: "Chile" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -3415,11 +3444,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "CHL"
     },
     China: {
-        name: "China",
-        id: "CHN",
+        type: "Feature",
+        properties: { name: "China" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -3672,11 +3702,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "CHN"
     },
     "Ivory Coast": {
-        name: "Ivory Coast",
-        id: "CIV",
+        type: "Feature",
+        properties: { name: "Ivory Coast" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -3729,11 +3760,12 @@ export const shapes = {
                     [-2.856125, 4.994476]
                 ]
             ]
-        }
+        },
+        id: "CIV"
     },
     Cameroon: {
-        name: "Cameroon",
-        id: "CMR",
+        type: "Feature",
+        properties: { name: "Cameroon" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -3801,11 +3833,12 @@ export const shapes = {
                     [13.075822, 2.267097]
                 ]
             ]
-        }
+        },
+        id: "CMR"
     },
     "Democratic Republic of the Congo": {
-        name: "Democratic Republic of the Congo",
-        id: "COD",
+        type: "Feature",
+        properties: { name: "Democratic Republic of the Congo" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -3934,11 +3967,12 @@ export const shapes = {
                     [30.83386, 3.509166]
                 ]
             ]
-        }
+        },
+        id: "COD"
     },
     "Republic of the Congo": {
-        name: "Republic of the Congo",
-        id: "COG",
+        type: "Feature",
+        properties: { name: "Republic of the Congo" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -3994,11 +4028,12 @@ export const shapes = {
                     [12.995517, -4.781103]
                 ]
             ]
-        }
+        },
+        id: "COG"
     },
     Colombia: {
-        name: "Colombia",
-        id: "COL",
+        type: "Feature",
+        properties: { name: "Colombia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4105,11 +4140,12 @@ export const shapes = {
                     [-75.373223, -0.152032]
                 ]
             ]
-        }
+        },
+        id: "COL"
     },
     "Costa Rica": {
-        name: "Costa Rica",
-        id: "CRI",
+        type: "Feature",
+        properties: { name: "Costa Rica" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4152,11 +4188,12 @@ export const shapes = {
                     [-82.965783, 8.225028]
                 ]
             ]
-        }
+        },
+        id: "CRI"
     },
     Cuba: {
-        name: "Cuba",
-        id: "CUB",
+        type: "Feature",
+        properties: { name: "Cuba" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4205,11 +4242,12 @@ export const shapes = {
                     [-82.268151, 23.188611]
                 ]
             ]
-        }
+        },
+        id: "CUB"
     },
     "Northern Cyprus": {
-        name: "Northern Cyprus",
-        id: "-99",
+        type: "Feature",
+        properties: { name: "Northern Cyprus" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4232,11 +4270,12 @@ export const shapes = {
                     [32.73178, 35.140026]
                 ]
             ]
-        }
+        },
+        id: "-99"
     },
     Cyprus: {
-        name: "Cyprus",
-        id: "CYP",
+        type: "Feature",
+        properties: { name: "Cyprus" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4258,11 +4297,12 @@ export const shapes = {
                     [33.973617, 35.058506]
                 ]
             ]
-        }
+        },
+        id: "CYP"
     },
     "Czech Republic": {
-        name: "Czech Republic",
-        id: "CZE",
+        type: "Feature",
+        properties: { name: "Czech Republic" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4304,11 +4344,12 @@ export const shapes = {
                     [16.960288, 48.596982]
                 ]
             ]
-        }
+        },
+        id: "CZE"
     },
     Germany: {
-        name: "Germany",
-        id: "DEU",
+        type: "Feature",
+        properties: { name: "Germany" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4373,11 +4414,12 @@ export const shapes = {
                     [9.921906, 54.983104]
                 ]
             ]
-        }
+        },
+        id: "DEU"
     },
     Djibouti: {
-        name: "Djibouti",
-        id: "DJI",
+        type: "Feature",
+        properties: { name: "Djibouti" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4399,11 +4441,12 @@ export const shapes = {
                     [43.081226, 12.699639]
                 ]
             ]
-        }
+        },
+        id: "DJI"
     },
     Denmark: {
-        name: "Denmark",
-        id: "DNK",
+        type: "Feature",
+        properties: { name: "Denmark" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -4440,11 +4483,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "DNK"
     },
     "Dominican Republic": {
-        name: "Dominican Republic",
-        id: "DOM",
+        type: "Feature",
+        properties: { name: "Dominican Republic" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4477,11 +4521,12 @@ export const shapes = {
                     [-71.712361, 19.714456]
                 ]
             ]
-        }
+        },
+        id: "DOM"
     },
     Algeria: {
-        name: "Algeria",
-        id: "DZA",
+        type: "Feature",
+        properties: { name: "Algeria" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4550,11 +4595,12 @@ export const shapes = {
                     [11.999506, 23.471668]
                 ]
             ]
-        }
+        },
+        id: "DZA"
     },
     Ecuador: {
-        name: "Ecuador",
-        id: "ECU",
+        type: "Feature",
+        properties: { name: "Ecuador" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4594,11 +4640,12 @@ export const shapes = {
                     [-80.302561, -3.404856]
                 ]
             ]
-        }
+        },
+        id: "ECU"
     },
     Egypt: {
-        name: "Egypt",
-        id: "EGY",
+        type: "Feature",
+        properties: { name: "Egypt" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4647,11 +4694,12 @@ export const shapes = {
                     [34.9226, 29.50133]
                 ]
             ]
-        }
+        },
+        id: "EGY"
     },
     Eritrea: {
-        name: "Eritrea",
-        id: "ERI",
+        type: "Feature",
+        properties: { name: "Eritrea" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4686,11 +4734,12 @@ export const shapes = {
                     [42.35156, 12.54223]
                 ]
             ]
-        }
+        },
+        id: "ERI"
     },
     Spain: {
-        name: "Spain",
-        id: "ESP",
+        type: "Feature",
+        properties: { name: "Spain" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4748,11 +4797,12 @@ export const shapes = {
                     [-9.034818, 41.880571]
                 ]
             ]
-        }
+        },
+        id: "ESP"
     },
     Estonia: {
-        name: "Estonia",
-        id: "EST",
+        type: "Feature",
+        properties: { name: "Estonia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4776,11 +4826,12 @@ export const shapes = {
                     [24.312863, 57.793424]
                 ]
             ]
-        }
+        },
+        id: "EST"
     },
     Ethiopia: {
-        name: "Ethiopia",
-        id: "ETH",
+        type: "Feature",
+        properties: { name: "Ethiopia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4846,11 +4897,12 @@ export const shapes = {
                     [37.90607, 14.95943]
                 ]
             ]
-        }
+        },
+        id: "ETH"
     },
     Finland: {
-        name: "Finland",
-        id: "FIN",
+        type: "Feature",
+        properties: { name: "Finland" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4895,11 +4947,12 @@ export const shapes = {
                     [28.59193, 69.064777]
                 ]
             ]
-        }
+        },
+        id: "FIN"
     },
     Fiji: {
-        name: "Fiji",
-        id: "FJI",
+        type: "Feature",
+        properties: { name: "Fiji" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -4938,11 +4991,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "FJI"
     },
     "Falkland Islands": {
-        name: "Falkland Islands",
-        id: "FLK",
+        type: "Feature",
+        properties: { name: "Falkland Islands" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -4959,11 +5013,12 @@ export const shapes = {
                     [-61.2, -51.85]
                 ]
             ]
-        }
+        },
+        id: "FLK"
     },
     France: {
-        name: "France",
-        id: "FRA",
+        type: "Feature",
+        properties: { name: "France" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -5054,11 +5109,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "FRA"
     },
     Gabon: {
-        name: "Gabon",
-        id: "GAB",
+        type: "Feature",
+        properties: { name: "Gabon" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -5096,11 +5152,12 @@ export const shapes = {
                     [11.093773, -3.978827]
                 ]
             ]
-        }
+        },
+        id: "GAB"
     },
     "United Kingdom": {
-        name: "England",
-        id: "GBR",
+        type: "Feature",
+        properties: { name: "England" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -5169,11 +5226,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "GBR"
     },
     Georgia: {
-        name: "Georgia",
-        id: "GEO",
+        type: "Feature",
+        properties: { name: "Georgia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -5204,11 +5262,12 @@ export const shapes = {
                     [41.554084, 41.535656]
                 ]
             ]
-        }
+        },
+        id: "GEO"
     },
     Ghana: {
-        name: "Ghana",
-        id: "GHA",
+        type: "Feature",
+        properties: { name: "Ghana" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -5240,11 +5299,12 @@ export const shapes = {
                     [1.060122, 5.928837]
                 ]
             ]
-        }
+        },
+        id: "GHA"
     },
     Guinea: {
-        name: "Guinea",
-        id: "GIN",
+        type: "Feature",
+        properties: { name: "Guinea" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -5321,11 +5381,12 @@ export const shapes = {
                     [-8.439298, 7.686043]
                 ]
             ]
-        }
+        },
+        id: "GIN"
     },
     Gambia: {
-        name: "Gambia",
-        id: "GMB",
+        type: "Feature",
+        properties: { name: "Gambia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -5348,11 +5409,12 @@ export const shapes = {
                     [-16.841525, 13.151394]
                 ]
             ]
-        }
+        },
+        id: "GMB"
     },
     "Guinea-Bissau": {
-        name: "Guinea Bissau",
-        id: "GNB",
+        type: "Feature",
+        properties: { name: "Guinea Bissau" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -5378,11 +5440,12 @@ export const shapes = {
                     [-15.130311, 11.040412]
                 ]
             ]
-        }
+        },
+        id: "GNB"
     },
     "Equatorial Guinea": {
-        name: "Equatorial Guinea",
-        id: "GNQ",
+        type: "Feature",
+        properties: { name: "Equatorial Guinea" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -5396,11 +5459,12 @@ export const shapes = {
                     [9.492889, 1.01012]
                 ]
             ]
-        }
+        },
+        id: "GNQ"
     },
     Greece: {
-        name: "Greece",
-        id: "GRC",
+        type: "Feature",
+        properties: { name: "Greece" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -5467,11 +5531,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "GRC"
     },
     Greenland: {
-        name: "Greenland",
-        id: "GRL",
+        type: "Feature",
+        properties: { name: "Greenland" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -5610,11 +5675,12 @@ export const shapes = {
                     [-46.76379, 82.62796]
                 ]
             ]
-        }
+        },
+        id: "GRL"
     },
     Guatemala: {
-        name: "Guatemala",
-        id: "GTM",
+        type: "Feature",
+        properties: { name: "Guatemala" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -5656,11 +5722,12 @@ export const shapes = {
                     [-90.095555, 13.735338]
                 ]
             ]
-        }
+        },
+        id: "GTM"
     },
     Guyana: {
-        name: "Guyana",
-        id: "GUY",
+        type: "Feature",
+        properties: { name: "Guyana" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -5707,11 +5774,12 @@ export const shapes = {
                     [-59.758285, 8.367035]
                 ]
             ]
-        }
+        },
+        id: "GUY"
     },
     Honduras: {
-        name: "Honduras",
-        id: "HND",
+        type: "Feature",
+        properties: { name: "Honduras" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -5775,11 +5843,12 @@ export const shapes = {
                     [-87.316654, 12.984686]
                 ]
             ]
-        }
+        },
+        id: "HND"
     },
     Croatia: {
-        name: "Croatia",
-        id: "HRV",
+        type: "Feature",
+        properties: { name: "Croatia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -5828,11 +5897,12 @@ export const shapes = {
                     [18.829838, 45.908878]
                 ]
             ]
-        }
+        },
+        id: "HRV"
     },
     Haiti: {
-        name: "Haiti",
-        id: "HTI",
+        type: "Feature",
+        properties: { name: "Haiti" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -5860,11 +5930,12 @@ export const shapes = {
                     [-73.189791, 19.915684]
                 ]
             ]
-        }
+        },
+        id: "HTI"
     },
     Hungary: {
-        name: "Hungary",
-        id: "HUN",
+        type: "Feature",
+        properties: { name: "Hungary" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -5902,11 +5973,12 @@ export const shapes = {
                     [16.202298, 46.852386]
                 ]
             ]
-        }
+        },
+        id: "HUN"
     },
     Indonesia: {
-        name: "Indonesia",
-        id: "IDN",
+        type: "Feature",
+        properties: { name: "Indonesia" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -6213,11 +6285,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "IDN"
     },
     India: {
-        name: "India",
-        id: "IND",
+        type: "Feature",
+        properties: { name: "India" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -6360,11 +6433,12 @@ export const shapes = {
                     [77.837451, 35.49401]
                 ]
             ]
-        }
+        },
+        id: "IND"
     },
     Ireland: {
-        name: "Ireland",
-        id: "IRL",
+        type: "Feature",
+        properties: { name: "Ireland" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -6384,11 +6458,12 @@ export const shapes = {
                     [-6.197885, 53.867565]
                 ]
             ]
-        }
+        },
+        id: "IRL"
     },
     Iran: {
-        name: "Iran",
-        id: "IRN",
+        type: "Feature",
+        properties: { name: "Iran" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -6470,11 +6545,12 @@ export const shapes = {
                     [53.921598, 37.198918]
                 ]
             ]
-        }
+        },
+        id: "IRN"
     },
     Iraq: {
-        name: "Iraq",
-        id: "IRQ",
+        type: "Feature",
+        properties: { name: "Iraq" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -6511,11 +6587,12 @@ export const shapes = {
                     [45.420618, 35.977546]
                 ]
             ]
-        }
+        },
+        id: "IRQ"
     },
     Iceland: {
-        name: "Iceland",
-        id: "ISL",
+        type: "Feature",
+        properties: { name: "Iceland" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -6542,11 +6619,12 @@ export const shapes = {
                     [-14.508695, 66.455892]
                 ]
             ]
-        }
+        },
+        id: "ISL"
     },
     Israel: {
-        name: "Israel",
-        id: "ISR",
+        type: "Feature",
+        properties: { name: "Israel" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -6576,11 +6654,12 @@ export const shapes = {
                     [35.719918, 32.709192]
                 ]
             ]
-        }
+        },
+        id: "ISR"
     },
     Italy: {
-        name: "Italy",
-        id: "ITA",
+        type: "Feature",
+        properties: { name: "Italy" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -6684,11 +6763,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "ITA"
     },
     Jamaica: {
-        name: "Jamaica",
-        id: "JAM",
+        type: "Feature",
+        properties: { name: "Jamaica" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -6706,11 +6786,12 @@ export const shapes = {
                     [-77.569601, 18.490525]
                 ]
             ]
-        }
+        },
+        id: "JAM"
     },
     Jordan: {
-        name: "Jordan",
-        id: "JOR",
+        type: "Feature",
+        properties: { name: "Jordan" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -6736,11 +6817,12 @@ export const shapes = {
                     [35.545665, 32.393992]
                 ]
             ]
-        }
+        },
+        id: "JOR"
     },
     Japan: {
-        name: "Japan",
-        id: "JPN",
+        type: "Feature",
+        properties: { name: "Japan" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -6822,11 +6904,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "JPN"
     },
     Kazakhstan: {
-        name: "Kazakhstan",
-        id: "KAZ",
+        type: "Feature",
+        properties: { name: "Kazakhstan" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -6945,11 +7028,12 @@ export const shapes = {
                     [70.962315, 42.266154]
                 ]
             ]
-        }
+        },
+        id: "KAZ"
     },
     Kenya: {
-        name: "Kenya",
-        id: "KEN",
+        type: "Feature",
+        properties: { name: "Kenya" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -6993,11 +7077,12 @@ export const shapes = {
                     [40.993, -0.85829]
                 ]
             ]
-        }
+        },
+        id: "KEN"
     },
     Kyrgyzstan: {
-        name: "Kyrgyzstan",
-        id: "KGZ",
+        type: "Feature",
+        properties: { name: "Kyrgyzstan" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7039,11 +7124,12 @@ export const shapes = {
                     [70.962315, 42.266154]
                 ]
             ]
-        }
+        },
+        id: "KGZ"
     },
     Cambodia: {
-        name: "Cambodia",
-        id: "KHM",
+        type: "Feature",
+        properties: { name: "Cambodia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7067,11 +7153,12 @@ export const shapes = {
                     [103.49728, 10.632555]
                 ]
             ]
-        }
+        },
+        id: "KHM"
     },
     "South Korea": {
-        name: "South Korea",
-        id: "KOR",
+        type: "Feature",
+        properties: { name: "South Korea" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7097,11 +7184,12 @@ export const shapes = {
                     [128.349716, 38.612243]
                 ]
             ]
-        }
+        },
+        id: "KOR"
     },
     Kosovo: {
-        name: "Kosovo",
-        id: "OSA",
+        type: "Feature",
+        properties: { name: "Kosovo" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7129,11 +7217,12 @@ export const shapes = {
                     [20.76216, 42.05186]
                 ]
             ]
-        }
+        },
+        id: "OSA"
     },
     Kuwait: {
-        name: "Kuwait",
-        id: "KWT",
+        type: "Feature",
+        properties: { name: "Kuwait" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7149,11 +7238,12 @@ export const shapes = {
                     [47.974519, 29.975819]
                 ]
             ]
-        }
+        },
+        id: "KWT"
     },
     Laos: {
-        name: "Laos",
-        id: "LAO",
+        type: "Feature",
+        properties: { name: "Laos" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7197,11 +7287,12 @@ export const shapes = {
                     [105.218777, 14.273212]
                 ]
             ]
-        }
+        },
+        id: "LAO"
     },
     Lebanon: {
-        name: "Lebanon",
-        id: "LBN",
+        type: "Feature",
+        properties: { name: "Lebanon" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7219,11 +7310,12 @@ export const shapes = {
                     [35.821101, 33.277426]
                 ]
             ]
-        }
+        },
+        id: "LBN"
     },
     Liberia: {
-        name: "Liberia",
-        id: "LBR",
+        type: "Feature",
+        properties: { name: "Liberia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7257,11 +7349,12 @@ export const shapes = {
                     [-7.712159, 4.364566]
                 ]
             ]
-        }
+        },
+        id: "LBR"
     },
     Libya: {
-        name: "Libya",
-        id: "LBY",
+        type: "Feature",
+        properties: { name: "Libya" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7324,11 +7417,12 @@ export const shapes = {
                     [14.8513, 22.86295]
                 ]
             ]
-        }
+        },
+        id: "LBY"
     },
     "Sri Lanka": {
-        name: "Sri Lanka",
-        id: "LKA",
+        type: "Feature",
+        properties: { name: "Sri Lanka" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7345,11 +7439,12 @@ export const shapes = {
                     [81.787959, 7.523055]
                 ]
             ]
-        }
+        },
+        id: "LKA"
     },
     Lesotho: {
-        name: "Lesotho",
-        id: "LSO",
+        type: "Feature",
+        properties: { name: "Lesotho" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7368,11 +7463,12 @@ export const shapes = {
                     [28.978263, -28.955597]
                 ]
             ]
-        }
+        },
+        id: "LSO"
     },
     Lithuania: {
-        name: "Lithuania",
-        id: "LTU",
+        type: "Feature",
+        properties: { name: "Lithuania" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7398,11 +7494,12 @@ export const shapes = {
                     [22.731099, 54.327537]
                 ]
             ]
-        }
+        },
+        id: "LTU"
     },
     Luxembourg: {
-        name: "Luxembourg",
-        id: "LUX",
+        type: "Feature",
+        properties: { name: "Luxembourg" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7416,11 +7513,12 @@ export const shapes = {
                     [6.043073, 50.128052]
                 ]
             ]
-        }
+        },
+        id: "LUX"
     },
     Latvia: {
-        name: "Latvia",
-        id: "LVA",
+        type: "Feature",
+        properties: { name: "Latvia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7449,11 +7547,12 @@ export const shapes = {
                     [21.0558, 56.031076]
                 ]
             ]
-        }
+        },
+        id: "LVA"
     },
     Morocco: {
-        name: "Morocco",
-        id: "MAR",
+        type: "Feature",
+        properties: { name: "Morocco" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7524,11 +7623,12 @@ export const shapes = {
                     [-5.193863, 35.755182]
                 ]
             ]
-        }
+        },
+        id: "MAR"
     },
     Moldova: {
-        name: "Moldova",
-        id: "MDA",
+        type: "Feature",
+        properties: { name: "Moldova" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7562,11 +7662,12 @@ export const shapes = {
                     [26.619337, 48.220726]
                 ]
             ]
-        }
+        },
+        id: "MDA"
     },
     Madagascar: {
-        name: "Madagascar",
-        id: "MDG",
+        type: "Feature",
+        properties: { name: "Madagascar" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7622,11 +7723,12 @@ export const shapes = {
                     [49.543519, -12.469833]
                 ]
             ]
-        }
+        },
+        id: "MDG"
     },
     Mexico: {
-        name: "Mexico",
-        id: "MEX",
+        type: "Feature",
+        properties: { name: "Mexico" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7803,11 +7905,12 @@ export const shapes = {
                     [-97.140008, 25.869997]
                 ]
             ]
-        }
+        },
+        id: "MEX"
     },
     "North Macedonia": {
-        name: "Macedonia",
-        id: "MKD",
+        type: "Feature",
+        properties: { name: "Macedonia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7831,11 +7934,12 @@ export const shapes = {
                     [20.59023, 41.85541]
                 ]
             ]
-        }
+        },
+        id: "MKD"
     },
     Mali: {
-        name: "Mali",
-        id: "MLI",
+        type: "Feature",
+        properties: { name: "Mali" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7918,11 +8022,12 @@ export const shapes = {
                     [-12.17075, 14.616834]
                 ]
             ]
-        }
+        },
+        id: "MLI"
     },
     "Myanmar [Burma]": {
-        name: "Myanmar",
-        id: "MMR",
+        type: "Feature",
+        properties: { name: "Myanmar" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -7999,11 +8104,12 @@ export const shapes = {
                     [99.543309, 20.186598]
                 ]
             ]
-        }
+        },
+        id: "MMR"
     },
     Montenegro: {
-        name: "Montenegro",
-        id: "MNE",
+        type: "Feature",
+        properties: { name: "Montenegro" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -8028,11 +8134,12 @@ export const shapes = {
                     [19.801613, 42.500093]
                 ]
             ]
-        }
+        },
+        id: "MNE"
     },
     Mongolia: {
-        name: "Mongolia",
-        id: "MNG",
+        type: "Feature",
+        properties: { name: "Mongolia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -8114,11 +8221,12 @@ export const shapes = {
                     [87.751264, 49.297198]
                 ]
             ]
-        }
+        },
+        id: "MNG"
     },
     Mozambique: {
-        name: "Mozambique",
-        id: "MOZ",
+        type: "Feature",
+        properties: { name: "Mozambique" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -8202,11 +8310,12 @@ export const shapes = {
                     [34.559989, -11.52002]
                 ]
             ]
-        }
+        },
+        id: "MOZ"
     },
     Mauritania: {
-        name: "Mauritania",
-        id: "MRT",
+        type: "Feature",
+        properties: { name: "Mauritania" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -8252,11 +8361,12 @@ export const shapes = {
                     [-12.17075, 14.616834]
                 ]
             ]
-        }
+        },
+        id: "MRT"
     },
     Malawi: {
-        name: "Malawi",
-        id: "MWI",
+        type: "Feature",
+        properties: { name: "Malawi" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -8291,11 +8401,12 @@ export const shapes = {
                     [34.559989, -11.52002]
                 ]
             ]
-        }
+        },
+        id: "MWI"
     },
     Malaysia: {
-        name: "Malaysia",
-        id: "MYS",
+        type: "Feature",
+        properties: { name: "Malaysia" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -8370,11 +8481,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "MYS"
     },
     Namibia: {
-        name: "Namibia",
-        id: "NAM",
+        type: "Feature",
+        properties: { name: "Namibia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -8425,11 +8537,12 @@ export const shapes = {
                     [16.344977, -28.576705]
                 ]
             ]
-        }
+        },
+        id: "NAM"
     },
     "New Caledonia": {
-        name: "New Caledonia",
-        id: "NCL",
+        type: "Feature",
+        properties: { name: "New Caledonia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -8449,11 +8562,12 @@ export const shapes = {
                     [165.77999, -21.080005]
                 ]
             ]
-        }
+        },
+        id: "NCL"
     },
     Niger: {
-        name: "Niger",
-        id: "NER",
+        type: "Feature",
+        properties: { name: "Niger" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -8518,11 +8632,12 @@ export const shapes = {
                     [2.154474, 11.94015]
                 ]
             ]
-        }
+        },
+        id: "NER"
     },
     Nigeria: {
-        name: "Nigeria",
-        id: "NGA",
+        type: "Feature",
+        properties: { name: "Nigeria" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -8587,11 +8702,12 @@ export const shapes = {
                     [8.500288, 4.771983]
                 ]
             ]
-        }
+        },
+        id: "NGA"
     },
     Nicaragua: {
-        name: "Nicaragua",
-        id: "NIC",
+        type: "Feature",
+        properties: { name: "Nicaragua" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -8650,11 +8766,12 @@ export const shapes = {
                     [-85.71254, 11.088445]
                 ]
             ]
-        }
+        },
+        id: "NIC"
     },
     Netherlands: {
-        name: "Netherlands",
-        id: "NLD",
+        type: "Feature",
+        properties: { name: "Netherlands" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -8675,11 +8792,12 @@ export const shapes = {
                     [6.074183, 53.510403]
                 ]
             ]
-        }
+        },
+        id: "NLD"
     },
     Norway: {
-        name: "Norway",
-        id: "NOR",
+        type: "Feature",
+        properties: { name: "Norway" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -8788,11 +8906,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "NOR"
     },
     Nepal: {
-        name: "Nepal",
-        id: "NPL",
+        type: "Feature",
+        properties: { name: "Nepal" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -8822,11 +8941,12 @@ export const shapes = {
                     [88.120441, 27.876542]
                 ]
             ]
-        }
+        },
+        id: "NPL"
     },
     "New Zealand": {
-        name: "New Zealand",
-        id: "NZL",
+        type: "Feature",
+        properties: { name: "New Zealand" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -8905,11 +9025,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "NZL"
     },
     Oman: {
-        name: "Oman",
-        id: "OMN",
+        type: "Feature",
+        properties: { name: "Oman" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -8969,11 +9090,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "OMN"
     },
     Pakistan: {
-        name: "Pakistan",
-        id: "PAK",
+        type: "Feature",
+        properties: { name: "Pakistan" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -9046,11 +9168,12 @@ export const shapes = {
                     [75.158028, 37.133031]
                 ]
             ]
-        }
+        },
+        id: "PAK"
     },
     Panama: {
-        name: "Panama",
-        id: "PAN",
+        type: "Feature",
+        properties: { name: "Panama" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -9109,11 +9232,12 @@ export const shapes = {
                     [-77.881571, 7.223771]
                 ]
             ]
-        }
+        },
+        id: "PAN"
     },
     Peru: {
-        name: "Peru",
-        id: "PER",
+        type: "Feature",
+        properties: { name: "Peru" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -9196,11 +9320,12 @@ export const shapes = {
                     [-69.590424, -17.580012]
                 ]
             ]
-        }
+        },
+        id: "PER"
     },
     Philippines: {
-        name: "Philippines",
-        id: "PHL",
+        type: "Feature",
+        properties: { name: "Philippines" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -9343,11 +9468,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "PHL"
     },
     "Papua New Guinea": {
-        name: "Papua New Guinea",
-        id: "PNG",
+        type: "Feature",
+        properties: { name: "Papua New Guinea" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -9449,11 +9575,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "PNG"
     },
     Poland: {
-        name: "Poland",
-        id: "POL",
+        type: "Feature",
+        properties: { name: "Poland" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -9505,11 +9632,12 @@ export const shapes = {
                     [15.016996, 51.106674]
                 ]
             ]
-        }
+        },
+        id: "POL"
     },
     "Puerto Rico": {
-        name: "Puerto Rico",
-        id: "PRI",
+        type: "Feature",
+        properties: { name: "Puerto Rico" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -9525,11 +9653,12 @@ export const shapes = {
                     [-66.282434, 18.514762]
                 ]
             ]
-        }
+        },
+        id: "PRI"
     },
     "North Korea": {
-        name: "North Korea",
-        id: "PRK",
+        type: "Feature",
+        properties: { name: "North Korea" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -9579,11 +9708,12 @@ export const shapes = {
                     [130.640016, 42.395009]
                 ]
             ]
-        }
+        },
+        id: "PRK"
     },
     Portugal: {
-        name: "Portugal",
-        id: "PRT",
+        type: "Feature",
+        properties: { name: "Portugal" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -9623,11 +9753,12 @@ export const shapes = {
                     [-9.034818, 41.880571]
                 ]
             ]
-        }
+        },
+        id: "PRT"
     },
     Paraguay: {
-        name: "Paraguay",
-        id: "PRY",
+        type: "Feature",
+        properties: { name: "Paraguay" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -9667,11 +9798,12 @@ export const shapes = {
                     [-62.685057, -22.249029]
                 ]
             ]
-        }
+        },
+        id: "PRY"
     },
     Qatar: {
-        name: "Qatar",
-        id: "QAT",
+        type: "Feature",
+        properties: { name: "Qatar" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -9687,11 +9819,12 @@ export const shapes = {
                     [50.810108, 24.754743]
                 ]
             ]
-        }
+        },
+        id: "QAT"
     },
     Romania: {
-        name: "Romania",
-        id: "ROU",
+        type: "Feature",
+        properties: { name: "Romania" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -9742,11 +9875,12 @@ export const shapes = {
                     [22.710531, 47.882194]
                 ]
             ]
-        }
+        },
+        id: "ROU"
     },
     Russia: {
-        name: "Russia",
-        id: "RUS",
+        type: "Feature",
+        properties: { name: "Russia" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -10401,11 +10535,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "RUS"
     },
     Rwanda: {
-        name: "Rwanda",
-        id: "RWA",
+        type: "Feature",
+        properties: { name: "Rwanda" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -10425,11 +10560,12 @@ export const shapes = {
                     [30.419105, -1.134659]
                 ]
             ]
-        }
+        },
+        id: "RWA"
     },
     "Western Sahara": {
-        name: "Western Sahara",
-        id: "ESH",
+        type: "Feature",
+        properties: { name: "Western Sahara" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -10464,11 +10600,12 @@ export const shapes = {
                     [-8.794884, 27.120696]
                 ]
             ]
-        }
+        },
+        id: "ESH"
     },
     "Saudi Arabia": {
-        name: "Saudi Arabia",
-        id: "SAU",
+        type: "Feature",
+        properties: { name: "Saudi Arabia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -10551,11 +10688,12 @@ export const shapes = {
                     [42.779332, 16.347891]
                 ]
             ]
-        }
+        },
+        id: "SAU"
     },
     Sudan: {
-        name: "Sudan",
-        id: "SDN",
+        type: "Feature",
+        properties: { name: "Sudan" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -10641,11 +10779,12 @@ export const shapes = {
                     [33.963393, 9.464285]
                 ]
             ]
-        }
+        },
+        id: "SDN"
     },
     "South Sudan": {
-        name: "South Sudan",
-        id: "SDS",
+        type: "Feature",
+        properties: { name: "South Sudan" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -10715,11 +10854,12 @@ export const shapes = {
                     [33.963393, 9.464285]
                 ]
             ]
-        }
+        },
+        id: "SDS"
     },
     Senegal: {
-        name: "Senegal",
-        id: "SEN",
+        type: "Feature",
+        properties: { name: "Senegal" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -10770,11 +10910,12 @@ export const shapes = {
                     [-16.713729, 13.594959]
                 ]
             ]
-        }
+        },
+        id: "SEN"
     },
     "Solomon Islands": {
-        name: "Solomon Islands",
-        id: "SLB",
+        type: "Feature",
+        properties: { name: "Solomon Islands" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -10836,11 +10977,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "SLB"
     },
     "Sierra Leone": {
-        name: "Sierra Leone",
-        id: "SLE",
+        type: "Feature",
+        properties: { name: "Sierra Leone" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -10869,11 +11011,12 @@ export const shapes = {
                     [-11.438779, 6.785917]
                 ]
             ]
-        }
+        },
+        id: "SLE"
     },
     "El Salvador": {
-        name: "El Salvador",
-        id: "SLV",
+        type: "Feature",
+        properties: { name: "El Salvador" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -10900,11 +11043,12 @@ export const shapes = {
                     [-87.793111, 13.38448]
                 ]
             ]
-        }
+        },
+        id: "SLV"
     },
     Somaliland: {
-        name: "Somaliland",
-        id: "ABV",
+        type: "Feature",
+        properties: { name: "Somaliland" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -10935,11 +11079,12 @@ export const shapes = {
                     [48.93813, 9.451749]
                 ]
             ]
-        }
+        },
+        id: "ABV"
     },
     Somalia: {
-        name: "Somalia",
-        id: "SOM",
+        type: "Feature",
+        properties: { name: "Somalia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -10982,11 +11127,12 @@ export const shapes = {
                     [49.72862, 11.5789]
                 ]
             ]
-        }
+        },
+        id: "SOM"
     },
     Serbia: {
-        name: "Republic of Serbia",
-        id: "SRB",
+        type: "Feature",
+        properties: { name: "Republic of Serbia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11039,11 +11185,12 @@ export const shapes = {
                     [20.874313, 45.416375]
                 ]
             ]
-        }
+        },
+        id: "SRB"
     },
     Suriname: {
-        name: "Suriname",
-        id: "SUR",
+        type: "Feature",
+        properties: { name: "Suriname" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11076,11 +11223,12 @@ export const shapes = {
                     [-57.147436, 5.97315]
                 ]
             ]
-        }
+        },
+        id: "SUR"
     },
     Slovakia: {
-        name: "Slovakia",
-        id: "SVK",
+        type: "Feature",
+        properties: { name: "Slovakia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11120,11 +11268,12 @@ export const shapes = {
                     [18.853144, 49.49623]
                 ]
             ]
-        }
+        },
+        id: "SVK"
     },
     Slovenia: {
-        name: "Slovenia",
-        id: "SVN",
+        type: "Feature",
+        properties: { name: "Slovenia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11149,11 +11298,12 @@ export const shapes = {
                     [13.806475, 46.509306]
                 ]
             ]
-        }
+        },
+        id: "SVN"
     },
     Sweden: {
-        name: "Sweden",
-        id: "SWE",
+        type: "Feature",
+        properties: { name: "Sweden" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11200,11 +11350,12 @@ export const shapes = {
                     [22.183173, 65.723741]
                 ]
             ]
-        }
+        },
+        id: "SWE"
     },
     Swaziland: {
-        name: "Swaziland",
-        id: "SWZ",
+        type: "Feature",
+        properties: { name: "Swaziland" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11222,11 +11373,12 @@ export const shapes = {
                     [32.071665, -26.73382]
                 ]
             ]
-        }
+        },
+        id: "SWZ"
     },
     Syria: {
-        name: "Syria",
-        id: "SYR",
+        type: "Feature",
+        properties: { name: "Syria" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11260,11 +11412,12 @@ export const shapes = {
                     [38.792341, 33.378686]
                 ]
             ]
-        }
+        },
+        id: "SYR"
     },
     Chad: {
-        name: "Chad",
-        id: "TCD",
+        type: "Feature",
+        properties: { name: "Chad" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11329,11 +11482,12 @@ export const shapes = {
                     [14.495787, 12.859396]
                 ]
             ]
-        }
+        },
+        id: "TCD"
     },
     Togo: {
-        name: "Togo",
-        id: "TGO",
+        type: "Feature",
+        properties: { name: "Togo" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11359,11 +11513,12 @@ export const shapes = {
                     [1.865241, 6.142158]
                 ]
             ]
-        }
+        },
+        id: "TGO"
     },
     Thailand: {
-        name: "Thailand",
-        id: "THA",
+        type: "Feature",
+        properties: { name: "Thailand" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11434,11 +11589,12 @@ export const shapes = {
                     [102.584932, 12.186595]
                 ]
             ]
-        }
+        },
+        id: "THA"
     },
     Tajikistan: {
-        name: "Tajikistan",
-        id: "TJK",
+        type: "Feature",
+        properties: { name: "Tajikistan" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11486,11 +11642,12 @@ export const shapes = {
                     [71.014198, 40.244366]
                 ]
             ]
-        }
+        },
+        id: "TJK"
     },
     Turkmenistan: {
-        name: "Turkmenistan",
-        id: "TKM",
+        type: "Feature",
+        properties: { name: "Turkmenistan" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11551,11 +11708,12 @@ export const shapes = {
                     [61.210817, 35.650072]
                 ]
             ]
-        }
+        },
+        id: "TKM"
     },
     "East Timor": {
-        name: "East Timor",
-        id: "TLS",
+        type: "Feature",
+        properties: { name: "East Timor" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11573,11 +11731,12 @@ export const shapes = {
                     [124.968682, -8.89279]
                 ]
             ]
-        }
+        },
+        id: "TLS"
     },
     "Trinidad and Tobago": {
-        name: "Trinidad and Tobago",
-        id: "TTO",
+        type: "Feature",
+        properties: { name: "Trinidad and Tobago" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11592,11 +11751,12 @@ export const shapes = {
                     [-61.68, 10.76]
                 ]
             ]
-        }
+        },
+        id: "TTO"
     },
     Tunisia: {
-        name: "Tunisia",
-        id: "TUN",
+        type: "Feature",
+        properties: { name: "Tunisia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11634,11 +11794,12 @@ export const shapes = {
                     [9.48214, 30.307556]
                 ]
             ]
-        }
+        },
+        id: "TUN"
     },
     Turkey: {
-        name: "Turkey",
-        id: "TUR",
+        type: "Feature",
+        properties: { name: "Turkey" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -11718,11 +11879,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "TUR"
     },
     Taiwan: {
-        name: "Taiwan",
-        id: "TWN",
+        type: "Feature",
+        properties: { name: "Taiwan" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11738,11 +11900,12 @@ export const shapes = {
                     [121.777818, 24.394274]
                 ]
             ]
-        }
+        },
+        id: "TWN"
     },
     Tanzania: {
-        name: "United Republic of Tanzania",
-        id: "TZA",
+        type: "Feature",
+        properties: { name: "United Republic of Tanzania" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11798,11 +11961,12 @@ export const shapes = {
                     [33.903711, -0.95]
                 ]
             ]
-        }
+        },
+        id: "TZA"
     },
     Uganda: {
-        name: "Uganda",
-        id: "UGA",
+        type: "Feature",
+        properties: { name: "Uganda" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11836,11 +12000,12 @@ export const shapes = {
                     [31.86617, -1.02736]
                 ]
             ]
-        }
+        },
+        id: "UGA"
     },
     Ukraine: {
-        name: "Ukraine",
-        id: "UKR",
+        type: "Feature",
+        properties: { name: "Ukraine" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11945,11 +12110,12 @@ export const shapes = {
                     [31.785998, 52.101678]
                 ]
             ]
-        }
+        },
+        id: "UKR"
     },
     Uruguay: {
-        name: "Uruguay",
-        id: "URY",
+        type: "Feature",
+        properties: { name: "Uruguay" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -11977,11 +12143,12 @@ export const shapes = {
                     [-57.625133, -30.216295]
                 ]
             ]
-        }
+        },
+        id: "URY"
     },
     "United States": {
-        name: "USA",
-        id: "USA",
+        type: "Feature",
+        properties: { name: "USA" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -12470,11 +12637,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "USA"
     },
     Uzbekistan: {
-        name: "Uzbekistan",
-        id: "UZB",
+        type: "Feature",
+        properties: { name: "Uzbekistan" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -12535,11 +12703,12 @@ export const shapes = {
                     [66.518607, 37.362784]
                 ]
             ]
-        }
+        },
+        id: "UZB"
     },
     Venezuela: {
-        name: "Venezuela",
-        id: "VEN",
+        type: "Feature",
+        properties: { name: "Venezuela" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -12638,11 +12807,12 @@ export const shapes = {
                     [-71.331584, 11.776284]
                 ]
             ]
-        }
+        },
+        id: "VEN"
     },
     Vietnam: {
-        name: "Vietnam",
-        id: "VNM",
+        type: "Feature",
+        properties: { name: "Vietnam" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -12693,11 +12863,12 @@ export const shapes = {
                     [108.05018, 21.55238]
                 ]
             ]
-        }
+        },
+        id: "VNM"
     },
     Vanuatu: {
-        name: "Vanuatu",
-        id: "VUT",
+        type: "Feature",
+        properties: { name: "Vanuatu" },
         geometry: {
             type: "MultiPolygon",
             coordinates: [
@@ -12722,11 +12893,12 @@ export const shapes = {
                     ]
                 ]
             ]
-        }
+        },
+        id: "VUT"
     },
     Palestine: {
-        name: "West Bank",
-        id: "PSE",
+        type: "Feature",
+        properties: { name: "West Bank" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -12742,11 +12914,12 @@ export const shapes = {
                     [35.545665, 32.393992]
                 ]
             ]
-        }
+        },
+        id: "PSE"
     },
     Yemen: {
-        name: "Yemen",
-        id: "YEM",
+        type: "Feature",
+        properties: { name: "Yemen" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -12797,11 +12970,12 @@ export const shapes = {
                     [53.108573, 16.651051]
                 ]
             ]
-        }
+        },
+        id: "YEM"
     },
     "South Africa": {
-        name: "South Africa",
-        id: "ZAF",
+        type: "Feature",
+        properties: { name: "South Africa" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -12904,11 +13078,12 @@ export const shapes = {
                     [28.978263, -28.955597]
                 ]
             ]
-        }
+        },
+        id: "ZAF"
     },
     Zambia: {
-        name: "Zambia",
-        id: "ZMB",
+        type: "Feature",
+        properties: { name: "Zambia" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -12976,11 +13151,12 @@ export const shapes = {
                     [32.759375, -9.230599]
                 ]
             ]
-        }
+        },
+        id: "ZMB"
     },
     Zimbabwe: {
-        name: "Zimbabwe",
-        id: "ZWE",
+        type: "Feature",
+        properties: { name: "Zimbabwe" },
         geometry: {
             type: "Polygon",
             coordinates: [
@@ -13024,6 +13200,7 @@ export const shapes = {
                     [31.191409, -22.25151]
                 ]
             ]
-        }
+        },
+        id: "ZWE"
     }
 };

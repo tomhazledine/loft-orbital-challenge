@@ -33,18 +33,11 @@ const parseShapes = shapes => {
         ["USA"]: "United States"
     };
 
-    const result = shapes.features
-        // Simplify the shape data to only include the name, id, and geometry
-        .map(feature => ({
-            name: feature.properties.name,
-            id: feature.id,
-            geometry: feature.geometry
-        }))
-        // Convert the array of shapes into an object keyed by name
-        .reduce((acc, curr) => {
-            const name = nameAliases[curr.name] || curr.name;
-            return { ...acc, [name]: curr };
-        }, {});
+    // Convert the array of shapes into an object keyed by name
+    const result = shapes.features.reduce((acc, curr) => {
+        const name = nameAliases[curr.properties.name] || curr.properties.name;
+        return { ...acc, [name]: curr };
+    }, {});
 
     return result;
 };
