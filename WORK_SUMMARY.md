@@ -32,3 +32,4 @@ Time: ~1 week 😆
     -   Add keyboard support for world map interaction.
     -   Add click interaction for map to navigate to a continent page.
     -   For a continent page, load the data for that continent from the API.
+    -   For a continent page, render a map of the continent (cropped to show *just* the continent using an appropriate projection - in this case, "Lagrangian" for consistency of rotation and aspect ratio).
