@@ -20,7 +20,6 @@ const World = ({ continents }) => {
     const sphereData = geoGenerator({ type: "Sphere" });
 
     const handleHover = (continent, country) => {
-        console.log({ continent, country });
         setActive({ continent: continent.name, country: country.name });
     };
 

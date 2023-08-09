@@ -33,3 +33,4 @@ Time: ~1 week 😆
     -   Add click interaction for map to navigate to a continent page.
     -   For a continent page, load the data for that continent from the API.
     -   For a continent page, render a map of the continent (cropped to show *just* the continent using an appropriate projection - in this case, "Lagrangian" for consistency of rotation and aspect ratio).
+    -   Add capital city markers to the continent map (with capitals' geoJSON taken from [github.com/Stefie/geojson-world](https://github.com/Stefie/geojson-world/blob/master/capitals.geojson) and parsed with `node scratch/capitals.js`)

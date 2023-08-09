@@ -16,7 +16,10 @@ const ContinentMap = ({ countries, code }) => {
 
     const continentFeature = {
         type: "FeatureCollection",
-        features: countries.map(country => country.shape)
+        features: countries
+            .filter(country => country.name !== "Russia")
+            .filter(country => country.name !== "Fiji")
+            .map(country => country.shape)
     };
 
     const projection = geoLagrange().fitSize(
