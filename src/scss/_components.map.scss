@@ -20,6 +20,11 @@
     fill: #bbb;
     cursor: pointer;
 }
+
+.map__country-shape--static {
+    cursor: default;
+}
+
 .map__graticules {
     stroke: #bbb;
     stroke-width: 0.1rem;
@@ -37,4 +42,13 @@
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+}
+
+.map__capital {
+}
+
+.map__capital--hitbox {
+    fill: none;
+    stroke: none;
+    cursor: pointer;
 }

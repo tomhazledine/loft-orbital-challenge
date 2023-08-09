@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 
 import { shapes } from "../data/shapes";
+import { capitals } from "../data/capitals";
 
 import ContinentMap from "../components/ContinentMap";
 
@@ -34,7 +35,8 @@ const Continent = () => {
         .map(country => {
             const shape = shapes[country.name];
             if (!shape) return false;
-            return { ...country, shape };
+            const capital = capitals[country.code];
+            return { ...country, shape, capitalShape: capital };
         })
         .filter(country => country);
 

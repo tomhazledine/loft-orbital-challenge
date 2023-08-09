@@ -31,6 +31,12 @@ const ContinentMap = ({ countries, code }) => {
 
     const sphereData = geoGenerator({ type: "Sphere" });
 
+    const handleCapitalClick = capital => {
+        console.log(
+            `${capital.properties.city} (${capital.properties.country})`
+        );
+    };
+
     const continentMarkup = (
         <g key={`continent_${code}`} className={`map__continent`}>
             {countries.map(country => {
@@ -38,17 +44,53 @@ const ContinentMap = ({ countries, code }) => {
                 return (
                     <g
                         key={`country_${country.code}`}
-                        dataCountry={country.code}
+                        data-country={country.code}
                         className="map__country"
                     >
                         <path
-                            className="map__country-shape"
+                            className="map__country-shape map__country-shape--static"
                             d={countryData}
                             clipPath="url(#sphere)"
                         />
                     </g>
                 );
             })}
+            {countries
+                .filter(
+                    country =>
+                        typeof country.capitalShape !== "undefined" &&
+                        country.capitalShape &&
+                        country.capitalShape.properties.city
+                )
+                .map(country => {
+                    const countryCapital = projection(
+                        country.capitalShape.geometry.coordinates
+                    );
+                    return (
+                        <g
+                            key={`capital_${country.code}_${country.capitalShape.city}`}
+                            data-country={country.code}
+                            data-capital={country.capitalShape.properties.city}
+                        >
+                            <circle
+                                className="map__capital"
+                                cx={countryCapital[0]}
+                                cy={countryCapital[1]}
+                                r="5"
+                            />
+                            <circle
+                                className="map__capital--hitbox"
+                                pointerEvents="all"
+                                cx={countryCapital[0]}
+                                cy={countryCapital[1]}
+                                r="30"
+                                onClick={() =>
+                                    handleCapitalClick(country.capitalShape)
+                                }
+                            />
+                        </g>
+                    );
+                })}
         </g>
     );
 
