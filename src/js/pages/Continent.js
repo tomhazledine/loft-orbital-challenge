@@ -4,6 +4,7 @@ import { useQuery, gql } from "@apollo/client";
 
 import { shapes } from "../data/shapes";
 import { capitals } from "../data/capitals";
+import { calculateTrip } from "../utils/trips";
 
 import ContinentMap from "../components/ContinentMap";
 
@@ -40,10 +41,20 @@ const Continent = () => {
         })
         .filter(country => country);
 
+    const handleTripGeneration = startCapital => {
+        console.log(`Calculating trip for ${startCapital}`);
+        const trip = calculateTrip(startCapital, countries);
+        console.log({ trip });
+    };
+
     return (
         <>
             <h1>Continent: {data.continent.name}</h1>
-            <ContinentMap countries={countries} code={data.continent.code} />
+            <ContinentMap
+                countries={countries}
+                code={data.continent.code}
+                handleTripGeneration={handleTripGeneration}
+            />
         </>
     );
 };

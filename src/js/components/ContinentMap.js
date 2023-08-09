@@ -2,7 +2,7 @@ import React from "react";
 import { geoPath, geoGraticule } from "d3-geo";
 import { geoLagrange } from "d3-geo-projection";
 
-const ContinentMap = ({ countries, code }) => {
+const ContinentMap = ({ countries, code, handleTripGeneration }) => {
     const layout = {
         width: 1460,
         height: 800,
@@ -38,6 +38,7 @@ const ContinentMap = ({ countries, code }) => {
         console.log(
             `${capital.properties.city} (${capital.properties.country})`
         );
+        handleTripGeneration(capital.id);
     };
 
     const continentMarkup = (
