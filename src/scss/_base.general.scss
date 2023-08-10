@@ -1,0 +1,15 @@
+// Global Box Sizing
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    transition: background-color 0.1s;
+}
+
+// Sizes
+html {
+    font-size: 62.5%;
+}

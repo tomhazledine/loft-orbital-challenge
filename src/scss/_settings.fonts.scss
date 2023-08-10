@@ -1,0 +1,73 @@
+// Typography etc.
+
+// Typography etc.
+
+// Font-face stub code. Use this if we
+// want to include our own font files:
+
+@font-face {
+    font-family: "Cartograph Sans";
+    src: url("/fonts/CartographSansCF-Medium.eot");
+    src: url("/fonts/CartographSansCF-Medium.eot?#iefix")
+            format("embedded-opentype"),
+        url("/fonts/CartographSansCF-Medium.woff") format("woff"),
+        url("/fonts/CartographSansCF-Medium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Cartograph Sans";
+    src: url("/fonts/CartographSansCF-MediumItalic.eot");
+    src: url("/fonts/CartographSansCF-MediumItalic.eot?#iefix")
+            format("embedded-opentype"),
+        url("/fonts/CartographSansCF-MediumItalic.woff") format("woff"),
+        url("/fonts/CartographSansCF-MediumItalic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Cartograph Sans";
+    src: url("/fonts/CartographSansCF-Heavy.eot");
+    src: url("/fonts/CartographSansCF-Heavy.eot?#iefix")
+            format("embedded-opentype"),
+        url("/fonts/CartographSansCF-Heavy.woff") format("woff"),
+        url("/fonts/CartographSansCF-Heavy.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Cartograph Sans";
+    src: url("/fonts/CartographSansCF-HeavyItalic.eot");
+    src: url("/fonts/CartographSansCF-HeavyItalic.eot?#iefix")
+            format("embedded-opentype"),
+        url("/fonts/CartographSansCF-HeavyItalic.woff") format("woff"),
+        url("/fonts/CartographSansCF-HeavyItalic.ttf") format("truetype");
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Cartograph Mono";
+    src: url("/fonts/CartographMonoCF-Medium.eot");
+    src: url("/fonts/CartographMonoCF-Medium.eot?#iefix")
+            format("embedded-opentype"),
+        url("/fonts/CartographMonoCF-Medium.woff") format("woff"),
+        url("/fonts/CartographMonoCF-Medium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Fonts
+:root {
+    // Font families
+    --display: "Cartograph Mono", sans-serif;
+    --text: "Cartograph Sans", sans-serif;
+    --code: "Cartograph Mono", Menlo, Monaco, "Andale Mono", "Lucida Console",
+        "Courier New", monospace;
+    // Weights
+    --book: 400;
+    --bold: 700;
+}

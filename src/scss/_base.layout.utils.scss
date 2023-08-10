@@ -1,0 +1,118 @@
+.stack > * + * {
+    display: block;
+    margin-top: 4rem;
+}
+
+.stack--large > * + * {
+    display: block;
+    margin-top: 8rem;
+}
+
+.stack--small > * + * {
+    display: block;
+    margin-top: 1rem;
+}
+
+.cluster {
+    display: flex !important;
+    align-items: center;
+    & > * + * {
+        margin-left: 1rem;
+    }
+}
+
+.cluster--no-gutter {
+    & > * + * {
+        margin-left: 0;
+    }
+}
+
+.cluster--baseline {
+    align-items: baseline;
+}
+
+.cluster--full-height {
+    align-items: stretch;
+}
+
+.cluster--justified {
+    justify-content: space-between;
+}
+
+.cluster--center {
+    @extend .cluster;
+    justify-content: center;
+}
+
+.half {
+    width: 49%;
+    margin-right: 2%;
+    float: left;
+    &.right {
+        margin-right: 0;
+    }
+}
+
+.quarter {
+    width: 23.5%;
+    float: left;
+    margin-right: 2%;
+    &.right {
+        margin-right: 0;
+    }
+}
+
+.third {
+    width: 32%;
+    float: left;
+    margin-right: 2%;
+    &.right {
+        margin-right: 0;
+    }
+}
+
+.twoThirds {
+    width: 66%;
+    float: left;
+    margin-right: 2%;
+    &.right {
+        margin-right: 0;
+    }
+}
+
+.threeQuarters {
+    width: 74%;
+    float: left;
+    margin-right: 2%;
+    &.right {
+        margin-right: 0;
+    }
+}
+
+.fifth {
+    width: 18.4%;
+    float: left;
+    margin-right: 2%;
+    &.right {
+        margin-right: 0;
+    }
+}
+
+.sixth {
+    width: 15%;
+    float: left;
+    margin-right: 2%;
+    &.right {
+        margin-right: 0;
+    }
+}
+
+.twenty {
+    width: 20%;
+    float: left;
+}
+
+.thirty {
+    width: 30%;
+    float: left;
+}

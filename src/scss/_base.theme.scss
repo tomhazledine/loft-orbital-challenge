@@ -1,0 +1,53 @@
+body {
+    font-size: 1.6em;
+    font-weight: var(--book);
+}
+
+*:focus {
+    outline: 0.3rem dashed var(--c-accent);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+}
+
+h1 {
+}
+
+a {
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: var(--bold);
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+code,
+pre > code {
+    font-family: var(--code);
+}
+pre > code {
+    line-height: 1;
+}
