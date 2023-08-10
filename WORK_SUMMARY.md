@@ -37,3 +37,6 @@ Time: ~1 week 😆
 -   When clicking on a city, generate a trip order based on the distance between cities (using a naive "nearest neighbour" algorithm).
 -   Draw trip route on map. ![Trip route](research/draw-trip.png)
 -   Renaming the app (thanks to ChatGPT for the cheesy name suggestion!) and adding some instructional text to the homepage.
+-   Add "trip overview" component to show details of selected trip.
+
+Time: ~5 hours

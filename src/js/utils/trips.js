@@ -3,6 +3,7 @@ const parseCountriesToCities = countries =>
         .filter(country => country.capitalShape)
         .map(country => ({
             country: country.code,
+            name: country.name,
             capital: country.capital,
             coords: country.capitalShape.geometry.coordinates
         }))

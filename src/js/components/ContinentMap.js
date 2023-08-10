@@ -114,7 +114,6 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
                     {trip.route && (
                         <g className="map__trip">
                             {trip.route.map((point, index) => {
-                                console.log({ point });
                                 const pointData = projection(point.coords);
                                 const nextPoint = trip.route[index + 1];
                                 if (!nextPoint) {
@@ -123,7 +122,6 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
                                 const nextPointData = projection(
                                     nextPoint.coords
                                 );
-                                console.log({ pointData, nextPointData });
                                 return (
                                     <line
                                         key={`trip-point-${point.country}`}
