@@ -1,0 +1,59 @@
+.map__wrapper {
+    position: relative;
+}
+
+.map__border {
+    stroke: #000;
+    stroke-width: 0.1rem;
+    fill: none;
+}
+
+.map {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.map__country-shape {
+    stroke: #000;
+    stroke-width: 0.1rem;
+    fill: #bbb;
+    cursor: pointer;
+}
+
+.map__country-shape--static {
+    cursor: default;
+}
+
+.map__graticules {
+    stroke: #bbb;
+    stroke-width: 0.1rem;
+    fill: none;
+}
+
+.map__continent--active .map__country-shape {
+    fill: red;
+}
+
+.map__legend {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.map__capital {
+}
+
+.map__capital--hitbox {
+    fill: none;
+    stroke: none;
+    cursor: pointer;
+}
+
+.map__trip-line {
+    stroke: red;
+    stroke-width: 0.2rem;
+}

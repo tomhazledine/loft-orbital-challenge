@@ -1,5 +1,5 @@
 export const config = {
-    appName: "loft-orbital-challenge",
+    appName: "graph-hopper",
     entryPoints: ["src/js/app.js"],
     styles: "src/scss",
     port: 1337,
