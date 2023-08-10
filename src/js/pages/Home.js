@@ -24,7 +24,12 @@ const Home = () => {
 
     return (
         <>
-            <h1>Home</h1>
+            <h1>Get Started</h1>
+            <p>Select a continent to start planning your dream* trip.</p>
+            <p>
+                Assuming you have very limited dreams of nearest-neighbour
+                travel plans.
+            </p>
             <World continents={data.continents} />
         </>
     );
