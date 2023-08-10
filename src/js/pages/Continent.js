@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 
@@ -10,6 +10,11 @@ import ContinentMap from "../components/ContinentMap";
 
 const Continent = () => {
     const params = useParams();
+
+    const [trip, setTrip] = useState({
+        start: false,
+        route: false
+    });
 
     const LIST_COUNTRIES = gql`
         {
@@ -44,7 +49,7 @@ const Continent = () => {
     const handleTripGeneration = startCapital => {
         console.log(`Calculating trip for ${startCapital}`);
         const trip = calculateTrip(startCapital, countries);
-        console.log({ trip });
+        setTrip({ start: startCapital, route: trip });
     };
 
     return (
@@ -54,6 +59,7 @@ const Continent = () => {
                 countries={countries}
                 code={data.continent.code}
                 handleTripGeneration={handleTripGeneration}
+                trip={trip}
             />
         </>
     );

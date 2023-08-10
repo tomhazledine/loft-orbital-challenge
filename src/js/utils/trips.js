@@ -21,7 +21,7 @@ const findClosestCoords = (start, others) => {
     return distances[0];
 };
 
-const findClosestCities = (start, others, previous = []) => {
+const findClosestCities = (start, others, previous = [start.country]) => {
     if (Object.keys(others).length <= 1) {
         return [...previous, Object.keys(others)[0]];
     }

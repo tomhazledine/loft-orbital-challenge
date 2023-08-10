@@ -35,3 +35,4 @@ Time: ~1 week 😆
     -   For a continent page, render a map of the continent (cropped to show *just* the continent using an appropriate projection - in this case, "Lagrangian" for consistency of rotation and aspect ratio).
     -   Add capital city markers to the continent map (with capitals' geoJSON taken from [github.com/Stefie/geojson-world](https://github.com/Stefie/geojson-world/blob/master/capitals.geojson) and parsed with `node scratch/capitals.js`)
     -   When clicking on a city, generate a trip order based on the distance between cities (using a naive "nearest neighbour" algorithm).
+    -   Draw trip route on map.
