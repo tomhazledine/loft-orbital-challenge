@@ -1,5 +1,6 @@
 const parseCountriesToCities = countries =>
     countries
+        .filter(country => country.capitalShape)
         .map(country => ({
             country: country.code,
             capital: country.capital,
