@@ -2,6 +2,8 @@ import React from "react";
 import { geoPath, geoGraticule } from "d3-geo";
 import { geoLagrange } from "d3-geo-projection";
 
+import MapDecorations from "./MapDecorations";
+
 const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
     const layout = {
         width: 1000,
@@ -137,6 +139,7 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
                     )}
                     {citiesMarkup}
                 </g>
+                <MapDecorations layout={layout} />
             </svg>
         </div>
     );

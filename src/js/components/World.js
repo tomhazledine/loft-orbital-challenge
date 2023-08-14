@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import { shapes } from "../data/shapes";
 import MapLegend from "./MapLegend";
+import MapDecorations from "./MapDecorations";
 
 const World = ({ continents }) => {
     const navigate = useNavigate();
@@ -124,6 +125,7 @@ const World = ({ continents }) => {
                 preserveAspectRatio="none"
                 // onMouseMove={handleMouseMove}
             >
+                <MapDecorations layout={layout} />
                 <clipPath id="sphere">
                     <path d={sphereData} />
                 </clipPath>
