@@ -4,8 +4,8 @@ import { geoLagrange } from "d3-geo-projection";
 
 const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
     const layout = {
-        width: 1460,
-        height: 800,
+        width: 1000,
+        height: 680,
         margin: {
             top: 0,
             right: 0,
