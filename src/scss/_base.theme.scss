@@ -1,6 +1,9 @@
 body {
     font-size: 1.6em;
-    font-weight: var(--book);
+    // font-weight: var(--thin);
+    font-family: var(--code);
+    background: var(--green-01);
+    color: var(--green-02);
 }
 
 *:focus {

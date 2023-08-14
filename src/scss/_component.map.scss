@@ -3,7 +3,7 @@
 }
 
 .map__border {
-    stroke: #000;
+    stroke: var(--green-02);
     stroke-width: 0.1rem;
     fill: none;
 }
@@ -11,13 +11,14 @@
 .map {
     width: 100%;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .map__country-shape {
-    stroke: #000;
+    stroke: var(--green-04);
     stroke-width: 0.1rem;
-    fill: #bbb;
+    fill: none;
+    fill: var(--green-01);
     cursor: pointer;
 }
 
@@ -26,25 +27,40 @@
 }
 
 .map__graticules {
-    stroke: #bbb;
-    stroke-width: 0.1rem;
+    stroke: var(--green-02);
+    stroke-dasharray: 2, 6;
+    stroke-width: 0.5px;
     fill: none;
 }
 
 .map__continent--active .map__country-shape {
-    fill: red;
+    fill: var(--green-04);
+    stroke: var(--green-02);
+    stroke-width: 0.05rem;
+    // opacity: 0.5;
 }
 
 .map__legend {
     position: absolute;
-    z-index: 1;
+    display: block;
+    z-index: 2;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+    background: var(--green-01);
+    border: 0.2rem dashed var(--green-02);
+    padding: 1rem;
+}
+
+.map__legend__continent {
+    font-weight: var(--bold);
 }
 
 .map__capital {
+    stroke: var(--green-03);
+    stroke-width: 1px;
+    fill: var(--green-04);
 }
 
 .map__capital--hitbox {
@@ -54,6 +70,6 @@
 }
 
 .map__trip-line {
-    stroke: red;
-    stroke-width: 0.2rem;
+    stroke: var(--green-04);
+    stroke-width: 4px;
 }

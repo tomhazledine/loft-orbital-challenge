@@ -1,6 +1,26 @@
 :root {
-    --c-accent: #ef6f00;
-    --c-hairline: #3a4b5f;
+    --black-01: #120d0e;
+    --black-02: #2f2225;
+    --black-03: #4d383c;
+    --black-04: #6b4d53;
+    --red: #bb1d02;
+    --green: #dae683;
+    --white-01: #ebedec;
+    --white-02: #d1d6d4;
+    --white-03: #b7beba;
+    --white-04: #9ca6a1;
+
+    --green-01: #005b42;
+    --green-02: #30c295;
+    --green-03: #1df5b4;
+    --green-04: #03ffc4;
+    --green-05: #0ef3d9;
+
+    --c-accent: var(--green-05);
+    --c-background: var(--black-01);
+    --c-text: var(--white-01);
+    --c-hairline: var(--black-04);
+
     --c-strong: #fafbf9;
     --c-button-bg: var(--c-accent);
     --c-button-text: #fafbf9;
@@ -15,8 +35,8 @@
     --c-background-plain: #27323f;
 
     // Selection Colours
-    --selection--primary: var(--c-background-plain);
-    --selection--secondary: var(--c-strong);
+    --selection--primary: var(--green-01);
+    --selection--secondary: var(--green-04);
 }
 
 :root[data-theme="light"] {

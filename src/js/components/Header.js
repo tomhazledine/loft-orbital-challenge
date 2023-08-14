@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <header>
-            <Link to="/">
-                <h3>GraphHopper</h3>
+        <header className="header cluster">
+            <Link to="/" className="header__title-link">
+                <h3 className="header__title">GraphHopper</h3>
             </Link>
             <p>Hop 'til you drop, one node at a time.</p>
         </header>

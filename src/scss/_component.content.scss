@@ -1,0 +1,13 @@
+.prompt__heading {
+    &:before {
+        content: "> ";
+    }
+}
+
+.prompt__footnote {
+    font-size: 1.2rem;
+    font-style: italic;
+    &:before {
+        content: "[^1]: ";
+    }
+}
