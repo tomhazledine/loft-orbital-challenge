@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 
 import { shapes } from "../data/shapes";
@@ -10,6 +10,7 @@ import ContinentMap from "../components/ContinentMap";
 import TripOverview from "../components/TripOverview";
 
 const Continent = () => {
+    const navigate = useNavigate();
     const params = useParams();
     const [trip, setTrip] = useState({
         start: false,
@@ -38,9 +39,18 @@ const Continent = () => {
 
     useEffect(() => {
         if (data && !loading && !error) {
-            setTrip(old => ({ ...old, continent: data.continent.name }));
+            setTrip(old => ({
+                ...old,
+                continent: data.continent.code.toLowerCase()
+            }));
         }
     }, [data]);
+
+    useEffect(() => {
+        if (trip.continent && trip.continent !== params.continent) {
+            navigate(`/continent/${trip.continent}`);
+        }
+    }, [trip]);
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error : {error.message}</p>;
@@ -66,7 +76,7 @@ const Continent = () => {
 
     return (
         <>
-            <TripOverview trip={trip} />
+            <TripOverview trip={trip} setTrip={setTrip} />
             <ContinentMap
                 countries={countries}
                 code={data.continent.code}
