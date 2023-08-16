@@ -21,6 +21,9 @@
     fill: var(--green-01);
     cursor: pointer;
 }
+.map__country-shape.map__country-shape--active {
+    fill: var(--green-02);
+}
 
 .map__country-shape--static {
     cursor: default;
@@ -37,7 +40,6 @@
     fill: var(--green-04);
     stroke: var(--green-02);
     stroke-width: 0.05rem;
-    // opacity: 0.5;
 }
 
 .map__legend {
@@ -58,9 +60,17 @@
 }
 
 .map__capital {
+    pointer-events: none;
     stroke: var(--green-03);
     stroke-width: 1px;
     fill: var(--green-04);
+}
+
+.map__capital--active {
+    pointer-events: none;
+    fill: var(--green-01);
+    stroke: var(--green-04);
+    stroke-width: 0.3rem;
 }
 
 .map__capital--hitbox {
@@ -70,8 +80,14 @@
 }
 
 .map__trip-line {
+    pointer-events: none;
     stroke: var(--green-04);
-    stroke-width: 4px;
+    stroke-width: 0.4rem;
+}
+.map__trip-line--emphasis {
+    pointer-events: none;
+    stroke: var(--green-01);
+    stroke-width: 1rem;
 }
 
 .map__corner {

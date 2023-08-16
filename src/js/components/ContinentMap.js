@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { geoPath, geoGraticule } from "d3-geo";
 import { geoLagrange } from "d3-geo-projection";
 
 import MapDecorations from "./MapDecorations";
 
 const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
+    const [active, setActive] = useState(false);
     const layout = {
         width: 1000,
         height: 680,
@@ -40,6 +41,16 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
     const handleCapitalClick = capital => {
         handleTripGeneration(capital.id);
     };
+    const handleCountryClick = country => {
+        handleTripGeneration(country);
+    };
+
+    const handleFocus = country => {
+        setActive(country);
+    };
+    const handleHover = country => {
+        setActive(country);
+    };
 
     const countriesMarkup = countries.map(country => {
         const countryData = geoGenerator(country.shape);
@@ -47,10 +58,19 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
             <g
                 key={`country_${country.code}`}
                 data-country={country.code}
-                className="map__country"
+                className={`map__country`}
             >
                 <path
-                    className="map__country-shape map__country-shape--static"
+                    // tabIndex="0"
+                    onFocus={() => handleFocus(country.code)}
+                    onMouseOver={() => handleHover(country.code)}
+                    onClick={() => handleCountryClick(country.code)}
+                    // onMouseMove={handleMouseMove}
+                    className={`map__country-shape ${
+                        country.code === active
+                            ? "map__country-shape--active"
+                            : ""
+                    }`}
                     d={countryData}
                     clipPath="url(#sphere)"
                 />
@@ -75,19 +95,23 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
                     data-country={country.code}
                     data-capital={country.capitalShape.properties.city}
                 >
+                    {active === country.code && (
+                        <circle
+                            className="map__capital--active"
+                            pointerEvents="all"
+                            cx={countryCapital[0]}
+                            cy={countryCapital[1]}
+                            r="10"
+                            onClick={() =>
+                                handleCapitalClick(country.capitalShape)
+                            }
+                        />
+                    )}
                     <circle
                         className="map__capital"
                         cx={countryCapital[0]}
                         cy={countryCapital[1]}
                         r="5"
-                    />
-                    <circle
-                        className="map__capital--hitbox"
-                        pointerEvents="all"
-                        cx={countryCapital[0]}
-                        cy={countryCapital[1]}
-                        r="30"
-                        onClick={() => handleCapitalClick(country.capitalShape)}
                     />
                 </g>
             );
@@ -122,14 +146,22 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
                                     nextPoint.coords
                                 );
                                 return (
-                                    <line
-                                        key={`trip-point-${point.country}`}
-                                        className={`map__trip-line`}
-                                        x1={pointData[0]}
-                                        y1={pointData[1]}
-                                        x2={nextPointData[0]}
-                                        y2={nextPointData[1]}
-                                    />
+                                    <g key={`trip-point-${point.country}`}>
+                                        <line
+                                            className={`map__trip-line--emphasis`}
+                                            x1={pointData[0]}
+                                            y1={pointData[1]}
+                                            x2={nextPointData[0]}
+                                            y2={nextPointData[1]}
+                                        />
+                                        <line
+                                            className={`map__trip-line`}
+                                            x1={pointData[0]}
+                                            y1={pointData[1]}
+                                            x2={nextPointData[0]}
+                                            y2={nextPointData[1]}
+                                        />
+                                    </g>
                                 );
                             })}
                         </g>
