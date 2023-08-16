@@ -81,6 +81,9 @@ const Continent = () => {
         ) {
             handleTripGeneration(trip.start);
         }
+        if (trip.continent && trip.route && trip.route.length > trip.limit) {
+            handleTripGeneration(trip.start);
+        }
     }, [trip]);
 
     if (loading) return <p>Loading...</p>;

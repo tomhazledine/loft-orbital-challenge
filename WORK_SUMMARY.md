@@ -44,4 +44,5 @@ Time: ~5 hours
 ## 4. Theming
 
 -   Add basic styling to the app using reference from cathode-ray-tube monitors and vintage air traffic control systems. (see reference images in [./research/images/maps](./research/images/maps) and colour theme generation in [./research/images/maps/colourscheme.jpg](./research/images/maps/colourscheme.jpg)) ![Colour scheme extraction from reference](./research/images/maps/colourscheme.jpg). **Note: this is a departure from the original style research done in [Section 2: Brainstorming](#2-brainstorming), but is a better fit for the vector-based display of the map data (and quicker to implement and get looking good).** ![First pass at styling](./research/styled-world-map.png)
--   HTML `<select>` for switching continents
+-   Form elements for editing trip withing the trip overview component.
+-   Change start-city-selection to be triggered by clicking anywhere on a country. Clicks can be less precise in general, but allows for greater precision when selecting cities that are close together (previous option relied on expanded "hit box" for each city, that *could* overlap and block each other).
