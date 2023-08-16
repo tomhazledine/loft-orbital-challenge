@@ -46,16 +46,7 @@ const Continent = () => {
         }
     }, [data]);
 
-    useEffect(() => {
-        if (trip.continent && trip.continent !== params.continent) {
-            navigate(`/continent/${trip.continent}`);
-        }
-    }, [trip]);
-
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error : {error.message}</p>;
-
-    const countries = data.continent.countries
+    const countries = (data?.continent?.countries || [])
         .map(country => {
             const shape = shapes[country.name];
             if (!shape) return false;
@@ -74,9 +65,31 @@ const Continent = () => {
         }));
     };
 
+    useEffect(() => {
+        if (trip.continent && trip.continent !== params.continent) {
+            navigate(`/continent/${trip.continent}`);
+            return;
+        }
+        if (trip.continent && trip.limit > countries.length) {
+            setTrip(old => ({ ...old, limit: countries.length }));
+            return;
+        }
+        if (
+            trip.continent &&
+            trip.start &&
+            (!trip.route || trip.start !== trip.route[0].country)
+        ) {
+            handleTripGeneration(trip.start);
+        }
+    }, [trip]);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error : {error.message}</p>;
+    if (!data.continent) return <p>Error : continent not found</p>;
+
     return (
         <>
-            <TripOverview trip={trip} setTrip={setTrip} />
+            <TripOverview trip={trip} setTrip={setTrip} countries={countries} />
             <ContinentMap
                 countries={countries}
                 code={data.continent.code}

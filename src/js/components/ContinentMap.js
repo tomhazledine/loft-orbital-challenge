@@ -38,9 +38,6 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
     const sphereData = geoGenerator({ type: "Sphere" });
 
     const handleCapitalClick = capital => {
-        console.log(
-            `${capital.properties.city} (${capital.properties.country})`
-        );
         handleTripGeneration(capital.id);
     };
 
