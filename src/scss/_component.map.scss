@@ -17,7 +17,6 @@
 .map__country-shape {
     stroke: var(--green-04);
     stroke-width: 0.1rem;
-    fill: none;
     fill: var(--green-01);
     cursor: pointer;
 }
@@ -37,12 +36,13 @@
 }
 
 .map__continent--active .map__country-shape {
-    fill: var(--green-04);
-    stroke: var(--green-02);
-    stroke-width: 0.05rem;
+    fill: var(--green-02);
+    stroke: var(--green-04);
+    stroke-width: 0.1rem;
 }
 
 .map__legend {
+    pointer-events: none;
     position: absolute;
     display: block;
     z-index: 2;

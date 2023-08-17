@@ -7,7 +7,7 @@ import { shapes } from "../data/shapes";
 import MapLegend from "./MapLegend";
 import MapDecorations from "./MapDecorations";
 
-const World = ({ continents }) => {
+const WorldMap = ({ continents }) => {
     const navigate = useNavigate();
     const [active, setActive] = useState({ continent: false, country: false });
     const wrapperRef = useRef(null);
@@ -141,9 +141,15 @@ const World = ({ continents }) => {
                 />
                 {continentMarkup}
             </svg>
-            <MapLegend active={active} position={legendPosition} />
+            {active.continent && (
+                <MapLegend
+                    main={active.continent}
+                    secondary={active.country}
+                    position={legendPosition}
+                />
+            )}
         </div>
     );
 };
 
-export default World;
+export default WorldMap;

@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
 
-import World from "../components/World";
+import World from "../components/WorldMap";
 
 const LIST_CONTINENTS = gql`
     {
