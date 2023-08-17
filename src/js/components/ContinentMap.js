@@ -4,6 +4,7 @@ import { geoLagrange } from "d3-geo-projection";
 
 import MapDecorations from "./MapDecorations";
 import MapLegend from "./MapLegend";
+import MapRoute from "./MapRoute";
 
 const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
     const [active, setActive] = useState(false);
@@ -149,46 +150,19 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
                 <g key={`continent_${code}`} className={`map__continent`}>
                     {countriesMarkup}
                     {trip.route && (
-                        <g className="map__trip">
-                            {trip.route.map((point, index) => {
-                                const pointData = projection(point.coords);
-                                const nextPoint = trip.route[index + 1];
-                                if (!nextPoint) {
-                                    return null;
-                                }
-                                const nextPointData = projection(
-                                    nextPoint.coords
-                                );
-                                return (
-                                    <g key={`trip-point-${point.country}`}>
-                                        <line
-                                            className={`map__trip-line--emphasis`}
-                                            x1={pointData[0]}
-                                            y1={pointData[1]}
-                                            x2={nextPointData[0]}
-                                            y2={nextPointData[1]}
-                                        />
-                                        <line
-                                            className={`map__trip-line`}
-                                            x1={pointData[0]}
-                                            y1={pointData[1]}
-                                            x2={nextPointData[0]}
-                                            y2={nextPointData[1]}
-                                        />
-                                    </g>
-                                );
-                            })}
-                        </g>
+                        <MapRoute trip={trip} projection={projection} />
                     )}
                     {citiesMarkup}
                 </g>
                 <MapDecorations layout={layout} />
             </svg>
-            <MapLegend
-                main={active.capital}
-                secondary={`(${active.name})`}
-                position={legendPosition}
-            />
+            {active && (
+                <MapLegend
+                    main={active.capital}
+                    secondary={`(${active.name})`}
+                    position={legendPosition}
+                />
+            )}
         </div>
     );
 };
