@@ -5,7 +5,9 @@ const config = {
         "^.+\\.js$": "babel-jest"
     },
     testEnvironment: "jsdom",
-    automock: false
+    automock: false,
+    moduleDirectories: ["<rootDir>/node_modules", "<rootDir>/src"],
+    setupFilesAfterEnv: ["<rootDir>/src/setupJest.js"]
 };
 
 export default config;

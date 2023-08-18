@@ -57,6 +57,8 @@ Time: ~3 hours
 
 -  Setup Jest testing framework.
 -  Add unit tests for "trip" utility functions.
+-  Setup React Testing Library (and associated deps).
+-  Add unit test for Header component.
 
 ---
 
