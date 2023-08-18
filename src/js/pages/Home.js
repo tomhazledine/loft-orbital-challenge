@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
 
-import World from "../components/World";
+import World from "../components/WorldMap";
 
 const LIST_CONTINENTS = gql`
     {
@@ -23,15 +23,20 @@ const Home = () => {
     if (error) return <p>Error : {error.message}</p>;
 
     return (
-        <>
-            <h1>Get Started</h1>
-            <p>Select a continent to start planning your dream* trip.</p>
-            <p>
-                Assuming you have very limited dreams of nearest-neighbour
-                travel plans.
-            </p>
+        <div className="stack">
+            <div className="prompt">
+                <h1 className="prompt__heading">Get Started</h1>
+                <p>
+                    Select a continent to start planning your dream
+                    <sup>[^1]</sup> trip.
+                </p>
+                <p className="prompt__footnote">
+                    Assuming you have very limited dreams of nearest-neighbour
+                    travel plans.
+                </p>
+            </div>
             <World continents={data.continents} />
-        </>
+        </div>
     );
 };
 

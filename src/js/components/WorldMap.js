@@ -4,13 +4,30 @@ import { geoPolyhedralWaterman } from "d3-geo-projection";
 import { useNavigate } from "react-router-dom";
 
 import { shapes } from "../data/shapes";
+import MapLegend from "./MapLegend";
+import MapDecorations from "./MapDecorations";
 
-const World = ({ continents }) => {
+const WorldMap = ({ continents }) => {
     const navigate = useNavigate();
     const [active, setActive] = useState({ continent: false, country: false });
     const wrapperRef = useRef(null);
+    const [legendPosition, setLegendPosition] = useState({ x: null, y: null });
 
-    const projection = geoPolyhedralWaterman();
+    const layout = {
+        width: 1400,
+        height: 680,
+        margin: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0
+        }
+    };
+
+    const projection = geoPolyhedralWaterman().fitSize(
+        [layout.width, layout.height],
+        { type: "Sphere" }
+    );
     const geoGenerator = geoPath().projection(projection);
 
     const graticuleGenerator = geoGraticule();
@@ -49,6 +66,15 @@ const World = ({ continents }) => {
         }
     };
 
+    const handleMouseMove = e => {
+        const bounds = wrapperRef.current.getBoundingClientRect();
+        const buffer = 10;
+        setLegendPosition({
+            x: e.clientX - bounds.left,
+            y: e.clientY - bounds.top + buffer
+        });
+    };
+
     useEffect(() => {
         document.addEventListener("click", handleClickOutside);
         document.addEventListener("keydown", handleEsc);
@@ -69,6 +95,7 @@ const World = ({ continents }) => {
             tabIndex="0"
             onFocus={() => handleFocus(continent)}
             onClick={() => handleSelection(continent)}
+            onMouseMove={handleMouseMove}
         >
             {continent.countries.map(country => {
                 const countryFeature = shapes[country.name];
@@ -90,19 +117,15 @@ const World = ({ continents }) => {
     ));
 
     return (
-        <div className="map__wrapper">
-            {active.continent && (
-                <div className="map__legend">
-                    <p>continent: {active.continent}</p>
-                    {active.country && <p>country: {active.country}</p>}
-                </div>
-            )}
+        <div className="map__wrapper" ref={wrapperRef}>
             <svg
-                ref={wrapperRef}
                 className="map"
-                viewBox={`35 0 890 500`}
+                // viewBox={`35 0 890 500`}
+                viewBox={`0 0 ${layout.width} ${layout.height}`}
                 preserveAspectRatio="none"
+                // onMouseMove={handleMouseMove}
             >
+                <MapDecorations layout={layout} />
                 <clipPath id="sphere">
                     <path d={sphereData} />
                 </clipPath>
@@ -118,8 +141,15 @@ const World = ({ continents }) => {
                 />
                 {continentMarkup}
             </svg>
+            {active.continent && (
+                <MapLegend
+                    main={active.continent}
+                    secondary={active.country}
+                    position={legendPosition}
+                />
+            )}
         </div>
     );
 };
 
-export default World;
+export default WorldMap;

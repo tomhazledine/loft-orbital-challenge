@@ -5,7 +5,7 @@ import Header from "../components/Header";
 
 const Layout = () => {
     return (
-        <div className="wrapper">
+        <div className="wrapper stack--small">
             <Header />
             <div className="main__container">
                 <Outlet />

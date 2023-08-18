@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { geoPath, geoGraticule } from "d3-geo";
 import { geoLagrange } from "d3-geo-projection";
 
+import MapDecorations from "./MapDecorations";
+import MapLegend from "./MapLegend";
+import MapRoute from "./MapRoute";
+import MapCities from "./MapCities";
+
 const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
+    const [active, setActive] = useState(false);
+    const wrapperRef = useRef(null);
+    const [legendPosition, setLegendPosition] = useState({ x: null, y: null });
+
     const layout = {
-        width: 1460,
-        height: 800,
+        width: 1000,
+        height: 680,
         margin: {
             top: 0,
             right: 0,
@@ -17,9 +26,9 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
     const continentFeature = {
         type: "FeatureCollection",
         features: countries
-            .filter(country => country.name !== "Russia")
-            .filter(country => country.name !== "Fiji")
-            .filter(country => country.name !== "Norway")
+            .filter(country => country.name !== "Russia") // Russia throws off the cropping for the "useful" parts of Europe (i.e. the parts with where the capitals are located).
+            .filter(country => country.name !== "Fiji") // Fiji crosses the international date line, which causes problems with the cropping.
+            .filter(country => country.name !== "Norway") // Norway includes Svalbard, which is way up north and throws off the cropping.
             .map(country => country.shape)
     };
 
@@ -35,11 +44,28 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
 
     const sphereData = geoGenerator({ type: "Sphere" });
 
-    const handleCapitalClick = capital => {
-        console.log(
-            `${capital.properties.city} (${capital.properties.country})`
-        );
-        handleTripGeneration(capital.id);
+    const handleCountryClick = country => {
+        handleTripGeneration(country);
+    };
+
+    const handleFocus = country => {
+        setActive(country);
+    };
+    const handleHover = country => {
+        setActive(country);
+    };
+
+    const handleReset = () => {
+        setActive(false);
+    };
+
+    const handleMouseMove = e => {
+        const bounds = wrapperRef.current.getBoundingClientRect();
+        const buffer = 10;
+        setLegendPosition({
+            x: e.clientX - bounds.left,
+            y: e.clientY - bounds.top + buffer
+        });
     };
 
     const countriesMarkup = countries.map(country => {
@@ -48,10 +74,19 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
             <g
                 key={`country_${country.code}`}
                 data-country={country.code}
-                className="map__country"
+                className={`map__country`}
+                onMouseMove={handleMouseMove}
             >
                 <path
-                    className="map__country-shape map__country-shape--static"
+                    onFocus={() => handleFocus(country)}
+                    onMouseOver={() => handleHover(country)}
+                    onClick={() => handleCountryClick(country.code)}
+                    onMouseLeave={handleReset}
+                    className={`map__country-shape ${
+                        country.code === active.code
+                            ? "map__country-shape--active"
+                            : ""
+                    }`}
                     d={countryData}
                     clipPath="url(#sphere)"
                 />
@@ -59,43 +94,8 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
         );
     });
 
-    const citiesMarkup = countries
-        .filter(
-            country =>
-                typeof country.capitalShape !== "undefined" &&
-                country.capitalShape &&
-                country.capitalShape.properties.city
-        )
-        .map(country => {
-            const countryCapital = projection(
-                country.capitalShape.geometry.coordinates
-            );
-            return (
-                <g
-                    key={`capital_${country.code}_${country.capitalShape.city}`}
-                    data-country={country.code}
-                    data-capital={country.capitalShape.properties.city}
-                >
-                    <circle
-                        className="map__capital"
-                        cx={countryCapital[0]}
-                        cy={countryCapital[1]}
-                        r="5"
-                    />
-                    <circle
-                        className="map__capital--hitbox"
-                        pointerEvents="all"
-                        cx={countryCapital[0]}
-                        cy={countryCapital[1]}
-                        r="30"
-                        onClick={() => handleCapitalClick(country.capitalShape)}
-                    />
-                </g>
-            );
-        });
-
     return (
-        <div className="map__wrapper">
+        <div className="map__wrapper" ref={wrapperRef}>
             <svg
                 className="map"
                 viewBox={`0 0 ${layout.width} ${layout.height}`}
@@ -112,32 +112,23 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
                 <g key={`continent_${code}`} className={`map__continent`}>
                     {countriesMarkup}
                     {trip.route && (
-                        <g className="map__trip">
-                            {trip.route.map((point, index) => {
-                                const pointData = projection(point.coords);
-                                const nextPoint = trip.route[index + 1];
-                                if (!nextPoint) {
-                                    return null;
-                                }
-                                const nextPointData = projection(
-                                    nextPoint.coords
-                                );
-                                return (
-                                    <line
-                                        key={`trip-point-${point.country}`}
-                                        className={`map__trip-line`}
-                                        x1={pointData[0]}
-                                        y1={pointData[1]}
-                                        x2={nextPointData[0]}
-                                        y2={nextPointData[1]}
-                                    />
-                                );
-                            })}
-                        </g>
+                        <MapRoute trip={trip} projection={projection} />
                     )}
-                    {citiesMarkup}
+                    <MapCities
+                        active={active}
+                        countries={countries}
+                        projection={projection}
+                    />
                 </g>
+                <MapDecorations layout={layout} />
             </svg>
+            {active && (
+                <MapLegend
+                    main={active.capital}
+                    secondary={`(${active.name})`}
+                    position={legendPosition}
+                />
+            )}
         </div>
     );
 };
