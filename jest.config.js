@@ -4,6 +4,7 @@ const config = {
     transform: {
         "^.+\\.js$": "babel-jest"
     },
+    testEnvironment: "jsdom",
     automock: false
 };
 
