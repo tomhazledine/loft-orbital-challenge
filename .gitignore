@@ -10,3 +10,6 @@ package-lock.json
 # esbuild analysis output
 jsssg/esbuild
 jsssg/stats.html
+
+# Jest coverage output
+coverage
