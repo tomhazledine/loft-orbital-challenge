@@ -1,0 +1,13 @@
+.continent-map-container {
+    position: relative;
+}
+
+.trip-overview {
+    position: absolute;
+    z-index: 3;
+    top: 2rem;
+    left: 2rem;
+    padding: 1rem 1rem 1rem 4rem;
+    border: 0.1rem solid var(--green-02);
+    background: var(--green-01);
+}

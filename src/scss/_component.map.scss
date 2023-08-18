@@ -61,7 +61,7 @@
 
 .map__capital {
     pointer-events: none;
-    stroke: var(--green-03);
+    stroke: var(--green-01);
     stroke-width: 1px;
     fill: var(--green-04);
 }
@@ -87,7 +87,30 @@
 .map__trip-line--emphasis {
     pointer-events: none;
     stroke: var(--green-01);
-    stroke-width: 1rem;
+    stroke-width: 0.6rem;
+}
+
+.map__trip-label-bg {
+    fill: var(--green-01);
+    stroke: var(--green-02);
+}
+
+.map__trip-label {
+    pointer-events: none;
+    font-size: 1rem;
+    font-weight: var(--bold);
+    fill: var(--green-04);
+    text-anchor: middle;
+    dominant-baseline: middle;
+    background: var(--green-01);
+}
+.map__trip-label--name {
+    pointer-events: none;
+    font-size: 1.4rem;
+    font-weight: var(--bold);
+    fill: var(--green-04);
+    dominant-baseline: middle;
+    background: var(--green-01);
 }
 
 .map__corner {

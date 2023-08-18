@@ -7,6 +7,7 @@ import { capitals } from "../data/capitals";
 import { calculateTrip } from "../utils/trips";
 
 import ContinentMap from "../components/ContinentMap";
+import TripForm from "../components/TripForm";
 import TripOverview from "../components/TripOverview";
 
 const Continent = () => {
@@ -56,7 +57,7 @@ const Continent = () => {
         .filter(country => country);
 
     const handleTripGeneration = startCapital => {
-        console.log(`Calculating trip for ${startCapital}`);
+        // console.log(`Calculating trip for ${startCapital}`);
         const trip = calculateTrip(startCapital, countries);
         setTrip(old => ({
             ...old,
@@ -80,9 +81,11 @@ const Continent = () => {
             (!trip.route || trip.start !== trip.route[0].country)
         ) {
             handleTripGeneration(trip.start);
+            return;
         }
-        if (trip.continent && trip.route && trip.route.length > trip.limit) {
+        if (trip.continent && trip.route && trip.route.length !== trip.limit) {
             handleTripGeneration(trip.start);
+            return;
         }
     }, [trip]);
 
@@ -91,15 +94,18 @@ const Continent = () => {
     if (!data.continent) return <p>Error : continent not found</p>;
 
     return (
-        <>
-            <TripOverview trip={trip} setTrip={setTrip} countries={countries} />
-            <ContinentMap
-                countries={countries}
-                code={data.continent.code}
-                handleTripGeneration={handleTripGeneration}
-                trip={trip}
-            />
-        </>
+        <div className="stack">
+            <TripForm trip={trip} setTrip={setTrip} countries={countries} />
+            <div className="continent-map-container">
+                <ContinentMap
+                    countries={countries}
+                    code={data.continent.code}
+                    handleTripGeneration={handleTripGeneration}
+                    trip={trip}
+                />
+                {trip.route && <TripOverview trip={trip} />}
+            </div>
+        </div>
     );
 };
 
