@@ -1,4 +1,4 @@
-const parseCountriesToCities = countries =>
+export const parseCountriesToCities = countries =>
     countries
         .filter(country => country.capitalShape)
         .map(country => ({
@@ -9,10 +9,15 @@ const parseCountriesToCities = countries =>
         }))
         .reduce((acc, curr) => ({ ...acc, [curr.country]: curr }), {});
 
-const calculateDistance = (start, end) =>
-    Math.sqrt(Math.pow(start[0] - end[0], 2) + Math.pow(start[1] - end[1], 2));
+export const calculateDistance = (start, end) =>
+    parseFloat(
+        Math.sqrt(
+            Math.pow(start[0] - end[0], 2) + Math.pow(start[1] - end[1], 2)
+        ).toFixed(4),
+        10
+    );
 
-const findClosestCoords = (start, others) => {
+export const findClosestCoords = (start, others) => {
     const distances = Object.values(others)
         .map(city => {
             const distance = calculateDistance(start.coords, city.coords);
@@ -22,7 +27,11 @@ const findClosestCoords = (start, others) => {
     return distances[0];
 };
 
-const findClosestCities = (start, others, previous = [start.country]) => {
+export const findClosestCities = (
+    start,
+    others,
+    previous = [start.country]
+) => {
     if (Object.keys(others).length <= 1) {
         return [...previous, Object.keys(others)[0]];
     }

@@ -53,6 +53,11 @@ Time: ~5 hours
 
 Time: ~3 hours
 
+## 5. Testing and CI
+
+-  Setup Jest testing framework.
+-  Add unit tests for "trip" utility functions.
+
 ---
 
 ## Things to improve if I had more time
