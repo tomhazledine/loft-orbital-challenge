@@ -59,7 +59,7 @@ const MapRoute = ({ projection, trip }) => {
                         <circle
                             className="map__trip-label-bg"
                             cx={point.pointData[0]}
-                            cy={point.pointData[1] - 20}
+                            cy={point.pointData[1] - 21}
                             r="10"
                         />
                         <text

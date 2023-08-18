@@ -14,8 +14,8 @@ const WorldMap = ({ continents }) => {
     const [legendPosition, setLegendPosition] = useState({ x: null, y: null });
 
     const layout = {
-        width: 840,
-        height: 560,
+        width: 1400,
+        height: 680,
         margin: {
             top: 0,
             right: 0,

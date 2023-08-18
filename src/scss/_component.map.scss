@@ -93,6 +93,7 @@
 .map__trip-label-bg {
     fill: var(--green-01);
     stroke: var(--green-02);
+    stroke-width: 0.2rem;
 }
 
 .map__trip-label {
@@ -115,6 +116,6 @@
 
 .map__corner {
     stroke: var(--green-02);
-    stroke-width: 0.1rem;
+    stroke-width: 0.2rem;
     fill: none;
 }
