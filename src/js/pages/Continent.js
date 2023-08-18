@@ -10,15 +10,17 @@ import ContinentMap from "../components/ContinentMap";
 import TripForm from "../components/TripForm";
 import TripOverview from "../components/TripOverview";
 
+const RAW_TRIP = {
+    start: false,
+    continent: false,
+    limit: 8,
+    route: false
+};
+
 const Continent = () => {
     const navigate = useNavigate();
     const params = useParams();
-    const [trip, setTrip] = useState({
-        start: false,
-        continent: false,
-        limit: 8,
-        route: false
-    });
+    const [trip, setTrip] = useState(RAW_TRIP);
 
     const LIST_COUNTRIES = gql`
         {
@@ -66,6 +68,10 @@ const Continent = () => {
         }));
     };
 
+    const handleReset = () => {
+        setTrip({ ...RAW_TRIP, continent: params.continent });
+    };
+
     useEffect(() => {
         if (trip.continent && trip.continent !== params.continent) {
             navigate(`/continent/${trip.continent}`);
@@ -95,7 +101,12 @@ const Continent = () => {
 
     return (
         <div className="stack">
-            <TripForm trip={trip} setTrip={setTrip} countries={countries} />
+            <TripForm
+                trip={trip}
+                setTrip={setTrip}
+                countries={countries}
+                reset={handleReset}
+            />
             <div className="continent-map-container">
                 <ContinentMap
                     countries={countries}

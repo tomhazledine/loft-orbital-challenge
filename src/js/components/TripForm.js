@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import InlineSelect from "./InlineSelect";
 
-const TripOverview = ({ trip, setTrip, countries }) => {
+const TripOverview = ({ trip, setTrip, countries, reset }) => {
     const handleContinentChange = e => {
         const newContinent = e.target.value;
         if (newContinent === trip.continent) return;
@@ -26,6 +26,19 @@ const TripOverview = ({ trip, setTrip, countries }) => {
         { default: "Select a city" }
     );
 
+    const handleEsc = e => {
+        if (e.keyCode === 27) {
+            reset();
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener("keydown", handleEsc);
+        return () => {
+            document.removeEventListener("keydown", handleEsc);
+        };
+    }, []);
+
     return (
         <div className="trip-form">
             <h2 className="prompt__heading">Trip Overview</h2>
@@ -37,6 +50,7 @@ const TripOverview = ({ trip, setTrip, countries }) => {
                     id="continent-select"
                     selected={trip.continent}
                     options={{
+                        default: "Select a continent",
                         af: "Africa",
                         as: "Asia",
                         eu: "Europe",
@@ -65,6 +79,9 @@ const TripOverview = ({ trip, setTrip, countries }) => {
                     onChange={handleStartChange}
                 />
             </p>
+            <button type="button" className="cluster" onClick={reset}>
+                <span>Reset</span> <span className="keyboard__hint">ESC</span>
+            </button>
         </div>
     );
 };

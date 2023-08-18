@@ -1,3 +1,26 @@
+button {
+    @extend %buttonReset;
+    cursor: pointer;
+    font-family: inherit;
+    color: var(--green-01);
+    background: var(--green-02);
+    padding: 0.5rem;
+    font-size: inherit;
+    &:hover {
+        background: var(--green-04);
+    }
+}
+
+.keyboard__hint {
+    font-size: 0.8rem;
+    display: inline-block;
+    font-size: 0.6em;
+    font-weight: var(--bold);
+    border: 0.1rem solid var(--green-01);
+    border-radius: 0.4rem;
+    padding: 0.2rem;
+}
+
 .form__select {
     font-family: var(--code);
     color: var(--green-04);
