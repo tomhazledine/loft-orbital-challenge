@@ -1,4 +1,8 @@
-# Fancy Name Will Go Here
+# GraphHopper
+
+A GraphQL-powered travel planner.
+
+> Hop 'til you drop, one node at a time.
 
 * Front End Challenge by [Tom Hazledine](https://tomhazledine.com) for [Loft Orbital](https://loftorbital.com/).
 * Assigned on 2023-07-27.

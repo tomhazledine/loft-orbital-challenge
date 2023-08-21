@@ -25,7 +25,7 @@ Special attention will be given to:
 
 * [x] Front-end app should be built using Vue.js or React.js
 * [x] The GraphQL API used should be the one listed above. You might also use others if you prefer.
-* [ ] Unit tests should be provided with your code
+* [x] Unit tests should be provided with your code
 * [x] A Dockerfile and/or docker-compose.yml file should be provided, to make the whole setup portable and easy-to-use.
 * [x] A `README.md` file is expected, to detail the chosen solution, and how to run it.
 * [x] A `WORK_SUMMARY.md` file is expected, to detail what you did sequentially and how.
@@ -34,7 +34,7 @@ Special attention will be given to:
 
 * [ ] Use TypeScript
 * [x] Use of OpenLayers, Leaflet or else to visualize on a map itenaries or something else
-* [ ] Set up a CI pipeline for unit testing (GitLab CI, Travis CI, Circle CI, ...)
+* [x] Set up a CI pipeline for unit testing (GitLab CI, Travis CI, Circle CI, ...)
 * [ ] Use a state for your app and/or discuss your approach to state management in a frontend application.
 * [x] The solution should be hosted on a GitHub or GitLab repository.
 

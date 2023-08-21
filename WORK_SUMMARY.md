@@ -1,5 +1,12 @@
 # Work Summary
 
+- [1. Setup dev environment](#1-setup-dev-environment)
+- [2. Brainstorming](#2-brainstorming)
+- [3. MVP development](#3-mvp-development)
+- [4. Theming](#4-theming)
+- [5. Testing and CI](#5-testing-and-ci)
+- [Things to improve if I had more time](#things-to-improve-if-i-had-more-time)
+
 The steps taken to build this app, in order.
 
 ## 1. Setup dev environment
@@ -59,17 +66,22 @@ Time: ~3 hours
 -  Add unit tests for "trip" utility functions.
 -  Setup React Testing Library (and associated deps).
 -  Add unit test for Header component.
+-  Setup CI via [GitHub Actions](https://github.com/tomhazledine/loft-orbital-challenge/actions), which builds the project and runs the tests for every PR to the `main` branch.
+
+~ 1.5 hours
 
 ---
 
 ## Things to improve if I had more time
 
-* Zoom in on trips (currently the map is always shows a full continent)
-* Resolve geo-data source (there are geo-political aspects I'm not qualified to judge)
+* More thorough testing. Example of a component test can be seen in `/src/components/Header.test.js` and an example of a utility function test can be seen in `/src/utils/trip.test.js`. Given more time, I would add more tests for the components and utilities, and also add some integration tests for the app as a whole.
+* Cross-browser testing: for expediencies' sake, currently only tested in Chrome on MacOS.
 * Incorporate more options for route calculation: e.g. "same currency", "same languages spoken" etc.
-* Either combine the geoJSON data with the API data or access the geoJSON data from an API rather than yoloing it with the [/src/js/data](./src/js/data) files.
 * Consolidate the two map components into a single component - there's a lot of duplication between the two.
 * Setup better state-management for trip data (most likely using a flux model with `useReducer` and `useContext` hooks).
+* Zoom in on trips (currently the map is always shows a full continent)
+* Resolve geo-data source (there are geo-political aspects I'm not qualified to judge)
+* Either combine the geoJSON data with the API data or access the geoJSON data from an API rather than yoloing it with the [/src/js/data](./src/js/data) files.
 * Better keyboard support for selecting items on the map (switch from tabbing to using the arrow keys, for instance).
 * Resolve overlapping city markers for routes that are close together (the Caribbean is a good example of this - currently an illegible mess).
 * Small screen layout (currently *no* thought has been given to mobile layout).
