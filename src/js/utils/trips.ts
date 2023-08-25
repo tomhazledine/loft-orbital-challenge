@@ -1,3 +1,5 @@
+import type { City, Cities } from "./trips.types";
+
 export const parseCountriesToCities = countries =>
     countries
         .filter(country => country.capitalShape)
@@ -9,15 +11,14 @@ export const parseCountriesToCities = countries =>
         }))
         .reduce((acc, curr) => ({ ...acc, [curr.country]: curr }), {});
 
-export const calculateDistance = (start, end) =>
+export const calculateDistance = (start: number[], end: number[]) =>
     parseFloat(
         Math.sqrt(
             Math.pow(start[0] - end[0], 2) + Math.pow(start[1] - end[1], 2)
-        ).toFixed(4),
-        10
+        ).toFixed(4)
     );
 
-export const findClosestCoords = (start, others) => {
+export const findClosestCoords = (start: City, others: Cities) => {
     const distances = Object.values(others)
         .map(city => {
             const distance = calculateDistance(start.coords, city.coords);
