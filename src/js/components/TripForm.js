@@ -62,6 +62,7 @@ const TripOverview = ({ trip, setTrip, countries, reset }) => {
                 />{" "}
                 that takes me through{" "}
                 <input
+                    id="limit-input"
                     className="form__number form__number--inline"
                     type="number"
                     min="2"
@@ -71,9 +72,9 @@ const TripOverview = ({ trip, setTrip, countries, reset }) => {
                 />{" "}
                 cities, starting at{" "}
                 <InlineSelect
-                    name="continent"
-                    label="Select a continent"
-                    id="continent-select"
+                    name="city"
+                    label="Select a city"
+                    id="city-select"
                     selected={trip.start || "default"}
                     options={cityOptions}
                     onChange={handleStartChange}
