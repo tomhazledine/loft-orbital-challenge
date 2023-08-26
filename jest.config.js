@@ -10,7 +10,7 @@ const config = {
     testEnvironment: "jsdom",
     automock: false,
     moduleDirectories: ["<rootDir>/node_modules", "<rootDir>/src"],
-    setupFilesAfterEnv: ["<rootDir>/src/setupJest.js"]
+    setupFilesAfterEnv: ["<rootDir>/src/setupJest.ts"]
 };
 
 export default config;

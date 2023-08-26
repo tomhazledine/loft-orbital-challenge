@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header: React.FC = () => {
     return (
         <header className="header cluster">
             <Link to="/" className="header__title-link">
