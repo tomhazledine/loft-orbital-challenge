@@ -1,6 +1,6 @@
-import type { City, Cities } from "./trips.types";
+import type { City, Cities, Country } from "./trips.types";
 
-export const parseCountriesToCities = countries =>
+export const parseCountriesToCities = (countries: Country[]): Cities =>
     countries
         .filter(country => country.capitalShape)
         .map(country => ({
@@ -29,9 +29,9 @@ export const findClosestCoords = (start: City, others: Cities) => {
 };
 
 export const findClosestCities = (
-    start,
-    others,
-    previous = [start.country]
+    start: City,
+    others: Cities,
+    previous: string[] = [start.country]
 ) => {
     if (Object.keys(others).length <= 1) {
         return [...previous, Object.keys(others)[0]];
@@ -42,7 +42,7 @@ export const findClosestCities = (
     return findClosestCities(next, rest, ongoing);
 };
 
-export const calculateTrip = (start, countries) => {
+export const calculateTrip = (start: string, countries: Country[]) => {
     const parsedCountries = parseCountriesToCities(countries);
     const { [start]: startCity, ...otherCities } = parsedCountries;
 
