@@ -10,17 +10,19 @@ import ContinentMap from "../components/ContinentMap";
 import TripForm from "../components/TripForm";
 import TripOverview from "../components/TripOverview";
 
+import type { Trip } from "../utils/trips.types";
+
 const RAW_TRIP = {
-    start: false,
-    continent: false,
+    start: undefined,
+    continent: undefined,
     limit: 8,
-    route: false
+    route: []
 };
 
-const Continent = () => {
+const Continent: React.FC = () => {
     const navigate = useNavigate();
     const params = useParams();
-    const [trip, setTrip] = useState(RAW_TRIP);
+    const [trip, setTrip] = useState((): Trip => RAW_TRIP);
 
     const LIST_COUNTRIES = gql`
         {
@@ -58,7 +60,7 @@ const Continent = () => {
         })
         .filter(country => country);
 
-    const handleTripGeneration = startCapital => {
+    const handleTripGeneration = (startCapital: string) => {
         // console.log(`Calculating trip for ${startCapital}`);
         const trip = calculateTrip(startCapital, countries);
         setTrip(old => ({
@@ -83,13 +85,21 @@ const Continent = () => {
         }
         if (
             trip.continent &&
-            trip.start &&
-            (!trip.route || trip.start !== trip.route[0].country)
+            typeof trip.start === "string" &&
+            (!trip.route ||
+                trip.route.length > 1 ||
+                !countries.find(country => country.capital === trip.start))
         ) {
             handleTripGeneration(trip.start);
             return;
         }
-        if (trip.continent && trip.route && trip.route.length !== trip.limit) {
+        if (
+            trip.continent &&
+            typeof trip.start === "string" &&
+            trip.route &&
+            trip.route.length &&
+            trip.route.length !== trip.limit
+        ) {
             handleTripGeneration(trip.start);
             return;
         }

@@ -7,8 +7,22 @@ import MapLegend from "./MapLegend";
 import MapRoute from "./MapRoute";
 import MapCities from "./MapCities";
 
-const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
-    const [active, setActive] = useState(false);
+import type { Country, Trip } from "../utils/trips.types";
+
+type ContinentMapProps = {
+    countries: Country[];
+    code: string;
+    handleTripGeneration: (startCapital: string) => void;
+    trip: Trip;
+};
+
+const ContinentMap: React.FC<ContinentMapProps> = ({
+    countries,
+    code,
+    handleTripGeneration,
+    trip
+}) => {
+    const [active, setActive] = useState((): Country | undefined => undefined);
     const wrapperRef = useRef(null);
     const [legendPosition, setLegendPosition] = useState({ x: null, y: null });
 
@@ -31,6 +45,7 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
             .filter(country => country.name !== "Norway") // Norway includes Svalbard, which is way up north and throws off the cropping.
             .map(country => country.shape)
     };
+    console.log({ countries, continentFeature });
 
     const projection = geoLagrange().fitSize(
         [layout.width, layout.height],
@@ -56,7 +71,7 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
     };
 
     const handleReset = () => {
-        setActive(false);
+        setActive(undefined);
     };
 
     const handleMouseMove = e => {
