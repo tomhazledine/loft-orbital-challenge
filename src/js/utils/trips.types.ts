@@ -10,7 +10,7 @@ export type Country = {
     capital: string;
     shape?: {
         geometry: {
-            coordinates: [number, number];
+            coordinates: number[];
         };
     };
     capitalShape?: {
@@ -18,13 +18,13 @@ export type Country = {
             city: string;
         };
         geometry: {
-            coordinates: [number, number];
+            coordinates: number[];
         };
     };
 };
 
 export type City = {
-    coords: [number, number];
+    coords: number[];
     distance?: number;
     country: string;
     capital: string;
