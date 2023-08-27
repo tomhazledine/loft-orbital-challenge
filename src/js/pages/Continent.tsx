@@ -61,7 +61,7 @@ const Continent: React.FC = () => {
         .filter(country => country);
 
     const handleTripGeneration = (startCapital: string) => {
-        // console.log(`Calculating trip for ${startCapital}`);
+        console.log(`Calculating trip for ${startCapital}`);
         const trip = calculateTrip(startCapital, countries);
         setTrip(old => ({
             ...old,
@@ -79,20 +79,19 @@ const Continent: React.FC = () => {
             navigate(`/continent/${trip.continent}`);
             return;
         }
+        if (
+            trip.continent &&
+            typeof trip.start === "string" &&
+            !countries.find(country => country.code === trip.start)
+        ) {
+            setTrip(old => ({ ...old, start: undefined, route: [] }));
+            return;
+        }
         if (trip.continent && trip.limit > countries.length) {
             setTrip(old => ({ ...old, limit: countries.length }));
             return;
         }
-        if (
-            trip.continent &&
-            typeof trip.start === "string" &&
-            (!trip.route ||
-                trip.route.length > 1 ||
-                !countries.find(country => country.capital === trip.start))
-        ) {
-            handleTripGeneration(trip.start);
-            return;
-        }
+
         if (
             trip.continent &&
             typeof trip.start === "string" &&
@@ -124,7 +123,7 @@ const Continent: React.FC = () => {
                     handleTripGeneration={handleTripGeneration}
                     trip={trip}
                 />
-                {trip.route && <TripOverview trip={trip} />}
+                {trip.route.length > 0 && <TripOverview trip={trip} />}
             </div>
         </div>
     );

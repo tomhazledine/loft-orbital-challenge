@@ -1,6 +1,8 @@
 import React from "react";
 
-const TripOverview = ({ trip }) => {
+import type { Trip } from "../utils/trips.types";
+
+const TripOverview: React.FC<{ trip: Trip }> = ({ trip }) => {
     return (
         <ol className="trip-overview">
             {trip.route.map(point => (

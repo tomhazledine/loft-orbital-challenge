@@ -1,6 +1,18 @@
 import React from "react";
 
-const MapDecorations = ({ layout, offset = 2, size = 20 }) => (
+import type { MapLayout } from "./ContinentMap";
+
+type MapDecorationsProps = {
+    layout: MapLayout;
+    offset?: number;
+    size?: number;
+};
+
+const MapDecorations: React.FC<MapDecorationsProps> = ({
+    layout,
+    offset = 2,
+    size = 20
+}) => (
     <g className="map__decorations">
         <path
             className="map__corner"

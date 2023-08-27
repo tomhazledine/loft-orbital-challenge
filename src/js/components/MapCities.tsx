@@ -1,6 +1,19 @@
 import React from "react";
 
-const MapCities = ({ countries, active, projection }) => {
+import type { Country } from "../utils/trips.types";
+
+type MapCitiesProps = {
+    countries: Country[];
+    active: Country | undefined;
+    projection: any;
+};
+
+const MapCities: React.FC<MapCitiesProps> = ({
+    countries,
+    active,
+    projection
+}) => {
+    // console.log({ countries, active, projection });
     const cities = countries.filter(
         country =>
             typeof country.capitalShape !== "undefined" &&
@@ -14,11 +27,11 @@ const MapCities = ({ countries, active, projection }) => {
         );
         return (
             <g
-                key={`capital_${country.code}_${country.capitalShape.city}`}
+                key={`capital_${country.code}_${country.capitalShape.properties.city}`}
                 data-country={country.code}
                 data-capital={country.capitalShape.properties.city}
             >
-                {active.code === country.code && (
+                {active && active.code === country.code && (
                     <circle
                         className="map__capital--active"
                         pointerEvents="all"

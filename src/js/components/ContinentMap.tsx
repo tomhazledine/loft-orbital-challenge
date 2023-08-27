@@ -9,6 +9,11 @@ import MapCities from "./MapCities";
 
 import type { Country, Trip } from "../utils/trips.types";
 
+export type MapLayout = {
+    width: number;
+    height: number;
+};
+
 type ContinentMapProps = {
     countries: Country[];
     code: string;
@@ -26,15 +31,9 @@ const ContinentMap: React.FC<ContinentMapProps> = ({
     const wrapperRef = useRef(null);
     const [legendPosition, setLegendPosition] = useState({ x: null, y: null });
 
-    const layout = {
+    const layout: MapLayout = {
         width: 1000,
-        height: 680,
-        margin: {
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0
-        }
+        height: 680
     };
 
     const continentFeature = {
@@ -45,7 +44,6 @@ const ContinentMap: React.FC<ContinentMapProps> = ({
             .filter(country => country.name !== "Norway") // Norway includes Svalbard, which is way up north and throws off the cropping.
             .map(country => country.shape)
     };
-    console.log({ countries, continentFeature });
 
     const projection = geoLagrange().fitSize(
         [layout.width, layout.height],
@@ -98,7 +96,7 @@ const ContinentMap: React.FC<ContinentMapProps> = ({
                     onClick={() => handleCountryClick(country.code)}
                     onMouseLeave={handleReset}
                     className={`map__country-shape ${
-                        country.code === active.code
+                        active && country.code === active.code
                             ? "map__country-shape--active"
                             : ""
                     }`}

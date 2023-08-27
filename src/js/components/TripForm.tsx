@@ -2,7 +2,21 @@ import React, { useEffect } from "react";
 
 import InlineSelect from "./InlineSelect";
 
-const TripOverview = ({ trip, setTrip, countries, reset }) => {
+import type { Trip, Country } from "../utils/trips.types";
+
+type TripOverviewProps = {
+    trip: Trip;
+    setTrip: any;
+    countries: Country[];
+    reset: () => void;
+};
+
+const TripOverview: React.FC<TripOverviewProps> = ({
+    trip,
+    setTrip,
+    countries,
+    reset
+}) => {
     const handleContinentChange = e => {
         const newContinent = e.target.value;
         if (newContinent === trip.continent) return;

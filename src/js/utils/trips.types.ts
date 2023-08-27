@@ -1,23 +1,34 @@
+export type Continent = {
+    code: string;
+    name: string;
+    countries: Country[];
+};
+
 export type Country = {
     code: string;
     name: string;
     capital: string;
     shape?: {
         geometry: {
-            coordinates: number[];
+            coordinates: [number, number];
         };
     };
     capitalShape?: {
+        properties: {
+            city: string;
+        };
         geometry: {
-            coordinates: number[];
+            coordinates: [number, number];
         };
     };
 };
 
 export type City = {
-    coords: number[];
+    coords: [number, number];
     distance?: number;
     country: string;
+    capital: string;
+    name: string;
 };
 
 export type Cities = {
@@ -28,5 +39,5 @@ export type Trip = {
     start: string | undefined;
     continent: string | undefined;
     limit: number;
-    route: Cities[];
+    route: City[];
 };

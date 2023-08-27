@@ -1,6 +1,15 @@
 import React from "react";
 
-const MapLegend = ({ main, secondary, position }) => (
+type MapLegendProps = {
+    main: string;
+    secondary?: string;
+    position: {
+        x?: number;
+        y?: number;
+    };
+};
+
+const MapLegend: React.FC<MapLegendProps> = ({ main, secondary, position }) => (
     <div
         className="map__legend"
         style={{
