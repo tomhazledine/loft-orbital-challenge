@@ -1,6 +1,22 @@
 import React from "react";
 
-const InlineSelect = ({ id, name, label, options, selected, onChange }) => {
+type InlineSelectProps = {
+    id: string;
+    name: string;
+    label: string;
+    options: { [key: string]: string };
+    selected: string;
+    onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+};
+
+const InlineSelect: React.FC<InlineSelectProps> = ({
+    id,
+    name,
+    label,
+    options,
+    selected,
+    onChange
+}) => {
     const defaultOption = options.default;
     const optionsMarkup = Object.keys(options)
         .filter(key => key !== "default")

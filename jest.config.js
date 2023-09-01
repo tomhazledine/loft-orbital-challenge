@@ -1,4 +1,7 @@
+/** @type {import('ts-jest').JestConfigWithTsJest} */
 const config = {
+    preset: "ts-jest",
+    extensionsToTreatAsEsm: [".ts"],
     verbose: true,
     collectCoverage: true,
     transform: {
@@ -7,7 +10,7 @@ const config = {
     testEnvironment: "jsdom",
     automock: false,
     moduleDirectories: ["<rootDir>/node_modules", "<rootDir>/src"],
-    setupFilesAfterEnv: ["<rootDir>/src/setupJest.js"]
+    setupFilesAfterEnv: ["<rootDir>/src/setupJest.ts"]
 };
 
 export default config;

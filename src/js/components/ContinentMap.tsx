@@ -7,20 +7,33 @@ import MapLegend from "./MapLegend";
 import MapRoute from "./MapRoute";
 import MapCities from "./MapCities";
 
-const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
-    const [active, setActive] = useState(false);
+import type { Country, Trip } from "../utils/trips.types";
+
+export type MapLayout = {
+    width: number;
+    height: number;
+};
+
+type ContinentMapProps = {
+    countries: Country[];
+    code: string;
+    handleTripGeneration: (startCapital: string) => void;
+    trip: Trip;
+};
+
+const ContinentMap: React.FC<ContinentMapProps> = ({
+    countries,
+    code,
+    handleTripGeneration,
+    trip
+}) => {
+    const [active, setActive] = useState((): Country | undefined => undefined);
     const wrapperRef = useRef(null);
     const [legendPosition, setLegendPosition] = useState({ x: null, y: null });
 
-    const layout = {
+    const layout: MapLayout = {
         width: 1000,
-        height: 680,
-        margin: {
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0
-        }
+        height: 680
     };
 
     const continentFeature = {
@@ -56,7 +69,7 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
     };
 
     const handleReset = () => {
-        setActive(false);
+        setActive(undefined);
     };
 
     const handleMouseMove = e => {
@@ -83,7 +96,7 @@ const ContinentMap = ({ countries, code, handleTripGeneration, trip }) => {
                     onClick={() => handleCountryClick(country.code)}
                     onMouseLeave={handleReset}
                     className={`map__country-shape ${
-                        country.code === active.code
+                        active && country.code === active.code
                             ? "map__country-shape--active"
                             : ""
                     }`}

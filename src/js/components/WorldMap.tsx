@@ -7,21 +7,28 @@ import { shapes } from "../data/shapes";
 import MapLegend from "./MapLegend";
 import MapDecorations from "./MapDecorations";
 
-const WorldMap = ({ continents }) => {
+import type { Continent } from "../utils/trips.types";
+
+type WorldMapProps = {
+    continents: Continent[];
+};
+
+type Active = {
+    continent: string | undefined;
+    country: string | undefined;
+};
+
+const WorldMap: React.FC<WorldMapProps> = ({ continents }) => {
     const navigate = useNavigate();
-    const [active, setActive] = useState({ continent: false, country: false });
+    const [active, setActive] = useState(
+        (): Active => ({ continent: undefined, country: undefined })
+    );
     const wrapperRef = useRef(null);
     const [legendPosition, setLegendPosition] = useState({ x: null, y: null });
 
     const layout = {
         width: 1400,
-        height: 680,
-        margin: {
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0
-        }
+        height: 680
     };
 
     const projection = geoPolyhedralWaterman().fitSize(
@@ -45,11 +52,11 @@ const WorldMap = ({ continents }) => {
     };
 
     const handleFocus = continent => {
-        setActive({ continent: continent.name, country: false });
+        setActive({ continent: continent.name, country: undefined });
     };
 
     const handleReset = () => {
-        setActive({ continent: false, country: false });
+        setActive({ continent: undefined, country: undefined });
     };
 
     const handleEsc = e => {
@@ -92,7 +99,7 @@ const WorldMap = ({ continents }) => {
                     ? "map__continent--active"
                     : ""
             }`}
-            tabIndex="0"
+            tabIndex={0}
             onFocus={() => handleFocus(continent)}
             onClick={() => handleSelection(continent)}
             onMouseMove={handleMouseMove}

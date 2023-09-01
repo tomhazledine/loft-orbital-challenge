@@ -10,17 +10,19 @@ import ContinentMap from "../components/ContinentMap";
 import TripForm from "../components/TripForm";
 import TripOverview from "../components/TripOverview";
 
+import type { Trip } from "../utils/trips.types";
+
 const RAW_TRIP = {
-    start: false,
-    continent: false,
+    start: undefined,
+    continent: undefined,
     limit: 8,
-    route: false
+    route: []
 };
 
-const Continent = () => {
+const Continent: React.FC = () => {
     const navigate = useNavigate();
     const params = useParams();
-    const [trip, setTrip] = useState(RAW_TRIP);
+    const [trip, setTrip] = useState((): Trip => RAW_TRIP);
 
     const LIST_COUNTRIES = gql`
         {
@@ -58,8 +60,8 @@ const Continent = () => {
         })
         .filter(country => country);
 
-    const handleTripGeneration = startCapital => {
-        // console.log(`Calculating trip for ${startCapital}`);
+    const handleTripGeneration = (startCapital: string) => {
+        console.log(`Calculating trip for ${startCapital}`);
         const trip = calculateTrip(startCapital, countries);
         setTrip(old => ({
             ...old,
@@ -77,19 +79,26 @@ const Continent = () => {
             navigate(`/continent/${trip.continent}`);
             return;
         }
+        if (
+            trip.continent &&
+            typeof trip.start === "string" &&
+            !countries.find(country => country.code === trip.start)
+        ) {
+            setTrip(old => ({ ...old, start: undefined, route: [] }));
+            return;
+        }
         if (trip.continent && trip.limit > countries.length) {
             setTrip(old => ({ ...old, limit: countries.length }));
             return;
         }
+
         if (
             trip.continent &&
-            trip.start &&
-            (!trip.route || trip.start !== trip.route[0].country)
+            typeof trip.start === "string" &&
+            trip.route &&
+            trip.route.length &&
+            trip.route.length !== trip.limit
         ) {
-            handleTripGeneration(trip.start);
-            return;
-        }
-        if (trip.continent && trip.route && trip.route.length !== trip.limit) {
             handleTripGeneration(trip.start);
             return;
         }
@@ -114,7 +123,7 @@ const Continent = () => {
                     handleTripGeneration={handleTripGeneration}
                     trip={trip}
                 />
-                {trip.route && <TripOverview trip={trip} />}
+                {trip.route.length > 0 && <TripOverview trip={trip} />}
             </div>
         </div>
     );

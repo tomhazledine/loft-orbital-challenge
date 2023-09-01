@@ -8,6 +8,9 @@ describe("Trip functions", () => {
                 name: "United States",
                 capital: "Washington",
                 capitalShape: {
+                    properties: {
+                        city: "Washington"
+                    },
                     geometry: {
                         coordinates: [1, 2]
                     }
@@ -18,6 +21,9 @@ describe("Trip functions", () => {
                 name: "Canada",
                 capital: "Ottawa",
                 capitalShape: {
+                    properties: {
+                        city: "Ottawa"
+                    },
                     geometry: {
                         coordinates: [3, 4]
                     }
@@ -120,6 +126,9 @@ describe("Trip functions", () => {
                 name: "United States",
                 capital: "Washington",
                 capitalShape: {
+                    properties: {
+                        city: "Washington"
+                    },
                     geometry: {
                         coordinates: [-77.02, 38.53]
                     }
@@ -130,6 +139,9 @@ describe("Trip functions", () => {
                 name: "Canada",
                 capital: "Ottawa",
                 capitalShape: {
+                    properties: {
+                        city: "Ottawa"
+                    },
                     geometry: {
                         coordinates: [-75.42, 45.25]
                     }
@@ -140,6 +152,9 @@ describe("Trip functions", () => {
                 name: "Mexico",
                 capital: "Mexico City",
                 capitalShape: {
+                    properties: {
+                        city: "Mexico City"
+                    },
                     geometry: {
                         coordinates: [-99.08, 19.26]
                     }
@@ -150,6 +165,9 @@ describe("Trip functions", () => {
                 name: "United Kingdom",
                 capital: "London",
                 capitalShape: {
+                    properties: {
+                        city: "London"
+                    },
                     geometry: {
                         coordinates: [-0.11, 51.3]
                     }

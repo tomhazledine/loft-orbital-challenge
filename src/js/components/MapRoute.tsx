@@ -1,7 +1,19 @@
 import React from "react";
 
-const MapRoute = ({ projection, trip }) => {
-    const route = trip.route.map((point, index) => {
+import type { Trip, City } from "../utils/trips.types";
+
+type MapRouteProps = {
+    projection: (coords: [number, number]) => [number, number];
+    trip: Trip;
+};
+
+type RouteCity = City & {
+    pointData: [number, number];
+    nextPointData?: [number, number];
+};
+
+const MapRoute: React.FC<MapRouteProps> = ({ projection, trip }) => {
+    const route = trip.route.map((point, index): RouteCity => {
         const pointData = projection(point.coords);
         const nextPoint = trip.route[index + 1];
         if (!nextPoint) {

@@ -2,7 +2,21 @@ import React, { useEffect } from "react";
 
 import InlineSelect from "./InlineSelect";
 
-const TripOverview = ({ trip, setTrip, countries, reset }) => {
+import type { Trip, Country } from "../utils/trips.types";
+
+type TripOverviewProps = {
+    trip: Trip;
+    setTrip: any;
+    countries: Country[];
+    reset: () => void;
+};
+
+const TripOverview: React.FC<TripOverviewProps> = ({
+    trip,
+    setTrip,
+    countries,
+    reset
+}) => {
     const handleContinentChange = e => {
         const newContinent = e.target.value;
         if (newContinent === trip.continent) return;
@@ -62,6 +76,7 @@ const TripOverview = ({ trip, setTrip, countries, reset }) => {
                 />{" "}
                 that takes me through{" "}
                 <input
+                    id="limit-input"
                     className="form__number form__number--inline"
                     type="number"
                     min="2"
@@ -71,9 +86,9 @@ const TripOverview = ({ trip, setTrip, countries, reset }) => {
                 />{" "}
                 cities, starting at{" "}
                 <InlineSelect
-                    name="continent"
-                    label="Select a continent"
-                    id="continent-select"
+                    name="city"
+                    label="Select a city"
+                    id="city-select"
                     selected={trip.start || "default"}
                     options={cityOptions}
                     onChange={handleStartChange}
